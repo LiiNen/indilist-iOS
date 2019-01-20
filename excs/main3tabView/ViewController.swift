@@ -24,6 +24,9 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         let loginChecker = UserDefaults.standard.bool(forKey: "loginSuccess")
         if(!loginChecker){
+            UserDefaults.standard.set(false, forKey: "loginSuccess")
+            UserDefaults.standard.synchronize()
+            logoutUserInfo()
             self.performSegue(withIdentifier: "goMenu", sender: self)
         }
         else{
@@ -55,6 +58,8 @@ class ViewController: UIViewController {
         UserDefaults.standard.set("", forKey: "loginUser_quit")
         UserDefaults.standard.set("", forKey: "loginToken")
         UserDefaults.standard.synchronize()
+        
+        NotificationCenter.default.post(name: NSNotification.Name("KKK"), object: nil)
     }
     
     // side menu
@@ -107,6 +112,9 @@ class ViewController: UIViewController {
         } else {
             let isslogin = UserDefaults.standard.bool(forKey: "loginSuccess")
             if(!isslogin){
+                UserDefaults.standard.set(false, forKey: "loginSuccess")
+                UserDefaults.standard.synchronize()
+                logoutUserInfo()
                 self.performSegue(withIdentifier: "goMenu", sender: self)
                 return
             }
