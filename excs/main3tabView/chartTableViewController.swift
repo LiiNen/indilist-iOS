@@ -46,6 +46,7 @@ class chartTableViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.musicId = rrow.musicid
         cell.info = ["artist" : rrow.artist, "title" : rrow.title, "music-id" : rrow.musicid, "album-img" : rrow.imageurl, "like" : rrow.like, "gerne" : rrow.gerne, "artistIMG" : rrow.artistimage, "upload-time" : rrow.time] as [String : Any]
         cell.musicInfoBtn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        cell.musicInfoBtn.imageEdgeInsets = UIEdgeInsets(top: CGFloat(10), left: CGFloat(10), bottom: CGFloat(10), right: CGFloat(10))
         return cell
     }
     
