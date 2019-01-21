@@ -10,22 +10,24 @@ import UIKit
 
 class chartTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var image2: UIImageView!
-    @IBOutlet weak var image3: UIImageView!
-    @IBOutlet weak var image4: UIImageView!
-    @IBOutlet weak var image5: UIImageView!
-    @IBOutlet weak var image6: UIImageView!
+    @IBOutlet weak var imageMusic: UIImageView!
     
-    @IBOutlet weak var label21: UILabel!
-    @IBOutlet weak var label22: UILabel!
-    @IBOutlet weak var label31: UILabel!
-    @IBOutlet weak var label32: UILabel!
-    @IBOutlet weak var label41: UILabel!
-    @IBOutlet weak var label42: UILabel!
-    @IBOutlet weak var label51: UILabel!
-    @IBOutlet weak var label52: UILabel!
-    @IBOutlet weak var label61: UILabel!
-    @IBOutlet weak var label62: UILabel!
+    @IBOutlet weak var labelMusic: UILabel!
+    @IBOutlet weak var labelArtist: UILabel!
+    
+    @IBOutlet weak var musicInfoBtn: UIButton!
+    @IBOutlet weak var rankNum: UILabel!
+    
+    var info : [String:Any]!
+    
+    var musicId : String!
+    
+    
+    @IBAction func musicInfoBtn(_ sender: Any) {
+        UserDefaults.standard.set(musicId, forKey: "musicInfoSeek")
+        UserDefaults.standard.setValue(info, forKey: "musicInfoSeek2")
+        UserDefaults.standard.synchronize()
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

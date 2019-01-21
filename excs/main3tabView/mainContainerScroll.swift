@@ -13,96 +13,54 @@ import AlamofireImage
 
 class mainContainerScroll: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 5
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        if(indexPath.row == 0){
-            return
-        }
-        else{
-            let row = chartItemList[indexPath.row - 1]
-            let addingTemp = ["artist" : row.artist, "title" : row.title, "music-id" : row.musicid, "album-img" : row.imageurl, "like" : row.like, "gerne" : row.gerne, "artistIMG" : row.artistimage, "upload-time" : row.time] as [String : Any]
-            print("my like state : ", row.like)
-            UserDefaults.standard.set(addingTemp, forKey: "addMusic")
-            UserDefaults.standard.synchronize()
-            NotificationCenter.default.post(name: NSNotification.Name("addingMusic"), object: nil)
-            showToast(message: "재생목록에 추가되었습니다.")
-        }
-        
+        let row = chartItemList[indexPath.row]
+        let addingTemp = ["artist" : row.artist, "title" : row.title, "music-id" : row.musicid, "album-img" : row.imageurl, "like" : row.like, "gerne" : row.gerne, "artistIMG" : row.artistimage, "upload-time" : row.time] as [String : Any]
+        print("my like state : ", row.like)
+        UserDefaults.standard.set(addingTemp, forKey: "addMusic")
+        UserDefaults.standard.synchronize()
+        NotificationCenter.default.post(name: NSNotification.Name("addingMusic"), object: nil)
+        showToast(message: "재생목록에 추가되었습니다.")
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let indexNum = indexPath.row + 1
-        let identifier = "chartCell" + String(indexNum)
         var cell = chartTableViewCell()
-        if(indexNum == 1){
-            cell = charTableView.dequeueReusableCell(withIdentifier: identifier) as! chartTableViewCell
+        
+        cell = charTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! chartTableViewCell
+        if(chartItemList.count == 0){
+            return cell
         }
-        else{
-            cell = charTableView.dequeueReusableCell(withIdentifier: identifier) as! chartTableViewCell
-            if(chartItemList.count == 0){
-                return cell
+        let row = chartItemList[indexPath.row]
+        cell.rankNum.text = String(indexPath.row + 1)
+        cell.labelMusic.text = row.title
+        cell.labelArtist.text = row.artist
+        cell.imageMusic.image = UIImage(named: "defaultMusicImage")
+        
+        
+        Alamofire.request(row.imageurl).responseImage{
+            response in
+            if let image = response.result.value{
+                cell.imageMusic.image = image
             }
-            let row = chartItemList[indexPath.row - 1]
-            //print(row)
-            switch(indexNum){
-            case 2 :
-                cell.label21.text = row.title
-                cell.label22.text = row.artist
-                cell.image2.image = UIImage(named: "defaultMusicImage")
-                Alamofire.request(row.imageurl).responseImage { response in
-                    if let image = response.result.value{
-                        cell.image2.image = image
-                    }
-                }
-                break
-            case 3 :
-                cell.label31.text = row.title
-                cell.label32.text = row.artist
-                cell.image3.image = UIImage(named: "defaultMusicImage")
-                Alamofire.request(row.imageurl).responseImage { response in
-                    if let image = response.result.value{
-                        cell.image3.image = image
-                    }
-                }
-                break
-            case 4 :
-                cell.label41.text = row.title
-                cell.label42.text = row.artist
-                cell.image4.image = UIImage(named: "defaultMusicImage")
-                Alamofire.request(row.imageurl).responseImage { response in
-                    if let image = response.result.value{
-                        cell.image4.image = image
-                    }
-                }
-                break
-            case 5 :
-                cell.label51.text = row.title
-                cell.label52.text = row.artist
-                cell.image5.image = UIImage(named: "defaultMusicImage")
-                Alamofire.request(row.imageurl).responseImage { response in
-                    if let image = response.result.value{
-                        cell.image5.image = image
-                    }
-                }
-                break
-            case 6 :
-                cell.label61.text = row.title
-                cell.label62.text = row.artist
-                cell.image6.image = UIImage(named: "defaultMusicImage")
-                Alamofire.request(row.imageurl).responseImage { response in
-                    if let image = response.result.value{
-                        cell.image6.image = image
-                    }
-                }
-                break
-            default:
-                break
-            }
-            
-            
         }
+        cell.musicId = row.musicid
+        cell.info = ["artist" : row.artist, "title" : row.title, "music-id" : row.musicid, "album-img" : row.imageurl, "like" : row.like, "gerne" : row.gerne, "artistIMG" : row.artistimage, "upload-time" : row.time] as [String : Any]
+        cell.musicInfoBtn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        cell.musicInfoBtn.imageEdgeInsets = UIEdgeInsets(top: CGFloat(10), left: CGFloat(10), bottom: CGFloat(10), right: CGFloat(10))
         return cell
     }
+    
+    @objc func buttonAction(sender: UIButton){
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let myview: oneMusicInfoView = storyboard.instantiateViewController(withIdentifier: "musicInfoView") as! oneMusicInfoView
+        myview.musicId = UserDefaults.standard.string(forKey: "musicInfoSeek")!
+        myview.info = UserDefaults.standard.value(forKey: "musicInfoSeek2")! as! [String : Any]
+        self.present(myview, animated: true, completion: nil)
+    }
+    
+    
     @IBOutlet weak var charTableView: UITableView!
     
     override func viewDidLoad() {
@@ -159,49 +117,6 @@ class mainContainerScroll: UIViewController, UITableViewDataSource, UITableViewD
             self.charTableView.reloadData()
             completion()
         }
-    }
-    @IBAction func info1(_ sender: Any){
-        let itemTemp = chartItemList[0]
-        let myinfo = ["artist" : itemTemp.artist, "title" : itemTemp.title, "music-id" : itemTemp.musicid, "album-img" : itemTemp.imageurl, "like" : itemTemp.like, "gerne" : itemTemp.gerne, "artistIMG" : itemTemp.artistimage, "upload-time" : itemTemp.time] as [String : Any]
-        UserDefaults.standard.set(itemTemp.musicid, forKey: "musicInfoSeek")
-        UserDefaults.standard.setValue(myinfo, forKey: "musicInfoSeek2")
-        gotoinfo()
-    }
-    @IBAction func info2(_ sender: Any){
-        let itemTemp = chartItemList[1]
-        let myinfo = ["artist" : itemTemp.artist, "title" : itemTemp.title, "music-id" : itemTemp.musicid, "album-img" : itemTemp.imageurl, "like" : itemTemp.like, "gerne" : itemTemp.gerne, "artistIMG" : itemTemp.artistimage, "upload-time" : itemTemp.time] as [String : Any]
-        UserDefaults.standard.set(itemTemp.musicid, forKey: "musicInfoSeek")
-        UserDefaults.standard.setValue(myinfo, forKey: "musicInfoSeek2")
-        gotoinfo()
-    }
-    @IBAction func info3(_ sender: Any){
-        let itemTemp = chartItemList[2]
-        let myinfo = ["artist" : itemTemp.artist, "title" : itemTemp.title, "music-id" : itemTemp.musicid, "album-img" : itemTemp.imageurl, "like" : itemTemp.like, "gerne" : itemTemp.gerne, "artistIMG" : itemTemp.artistimage, "upload-time" : itemTemp.time] as [String : Any]
-        UserDefaults.standard.set(itemTemp.musicid, forKey: "musicInfoSeek")
-        UserDefaults.standard.setValue(myinfo, forKey: "musicInfoSeek2")
-        gotoinfo()
-    }
-    @IBAction func info4(_ sender: Any){
-        let itemTemp = chartItemList[3]
-        let myinfo = ["artist" : itemTemp.artist, "title" : itemTemp.title, "music-id" : itemTemp.musicid, "album-img" : itemTemp.imageurl, "like" : itemTemp.like, "gerne" : itemTemp.gerne, "artistIMG" : itemTemp.artistimage, "upload-time" : itemTemp.time] as [String : Any]
-        UserDefaults.standard.set(itemTemp.musicid, forKey: "musicInfoSeek")
-        UserDefaults.standard.setValue(myinfo, forKey: "musicInfoSeek2")
-        gotoinfo()
-    }
-    @IBAction func info5(_ sender: Any){
-        let itemTemp = chartItemList[4]
-        let myinfo = ["artist" : itemTemp.artist, "title" : itemTemp.title, "music-id" : itemTemp.musicid, "album-img" : itemTemp.imageurl, "like" : itemTemp.like, "gerne" : itemTemp.gerne, "artistIMG" : itemTemp.artistimage, "upload-time" : itemTemp.time] as [String : Any]
-        UserDefaults.standard.set(itemTemp.musicid, forKey: "musicInfoSeek")
-        UserDefaults.standard.setValue(myinfo, forKey: "musicInfoSeek2")
-        gotoinfo()
-    }
-    
-    func gotoinfo(){
-        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let myview: oneMusicInfoView = storyboard.instantiateViewController(withIdentifier: "musicInfoView") as! oneMusicInfoView
-        myview.musicId = UserDefaults.standard.string(forKey: "musicInfoSeek")!
-        myview.info = UserDefaults.standard.value(forKey: "musicInfoSeek2")! as! [String : Any]
-        self.present(myview, animated: true, completion: nil)
     }
     
     func showToast(message : String) {

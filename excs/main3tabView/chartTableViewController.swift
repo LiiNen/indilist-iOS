@@ -12,7 +12,6 @@ import Alamofire
 import SwiftyJSON
 
 class chartTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
 
     @IBOutlet weak var chartTableView2: UITableView!
     struct chartItem{
@@ -25,6 +24,7 @@ class chartTableViewController: UIViewController, UITableViewDelegate, UITableVi
         var artistimage : String
         var time : String
     }
+    
     var cchartItemList = [chartItem]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
