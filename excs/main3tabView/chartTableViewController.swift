@@ -38,11 +38,9 @@ class chartTableViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.title.text = rrow.title
         cell.mnum.text = String(indexPath.row + 1)
         cell.albumArt.image = UIImage(named: "defaultMusicImage")
-        Alamofire.request(rrow.imageurl).responseImage { response in
-            if let image = response.result.value {
-                cell.albumArt.image = image
-            }
-        }
+        
+        cell.albumArt.af_setImage(withURL: URL(string: rrow.imageurl)!)
+        
         cell.musicId = rrow.musicid
         cell.info = ["artist" : rrow.artist, "title" : rrow.title, "music-id" : rrow.musicid, "album-img" : rrow.imageurl, "like" : rrow.like, "gerne" : rrow.gerne, "artistIMG" : rrow.artistimage, "upload-time" : rrow.time] as [String : Any]
         cell.musicInfoBtn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
@@ -101,9 +99,7 @@ class chartTableViewController: UIViewController, UITableViewDelegate, UITableVi
                 for i in 0..<arrayTemp.count{
                     self.cchartItemList.append(chartItem(artist: ((arrayTemp[i] as AnyObject).value(forKey: "artist") as? String)!, title: ((arrayTemp[i] as AnyObject).value(forKey: "title") as? String)!, imageurl: ((arrayTemp[i] as AnyObject).value(forKey: "album-img") as? String)!, musicid: ((arrayTemp[i] as AnyObject).value(forKey: "music-id") as? String)!, like: ((arrayTemp[i] as AnyObject).value(forKey: "like") as? Int)!, gerne: ((arrayTemp[i] as AnyObject).value(forKey: "genre") as? String)!, artistimage: ((arrayTemp[i] as AnyObject).value(forKey: "artistIMG") as? String)!, time: ((arrayTemp[i] as AnyObject).value(forKey: "upload-time") as? String)!))
                 }
-                self.chartTableView2.reloadData()
             }
-            self.chartTableView2.reloadData()
             completion()
         }
     }
@@ -122,9 +118,7 @@ class chartTableViewController: UIViewController, UITableViewDelegate, UITableVi
                 for i in 0..<arrayTemp.count{
                     self.cchartItemList.append(chartItem(artist: ((arrayTemp[i] as AnyObject).value(forKey: "artist") as? String)!, title: ((arrayTemp[i] as AnyObject).value(forKey: "title") as? String)!, imageurl: ((arrayTemp[i] as AnyObject).value(forKey: "album-img") as? String)!, musicid: ((arrayTemp[i] as AnyObject).value(forKey: "music-id") as? String)!, like: ((arrayTemp[i] as AnyObject).value(forKey: "like") as? Int)!, gerne: ((arrayTemp[i] as AnyObject).value(forKey: "genre") as? String)!, artistimage: ((arrayTemp[i] as AnyObject).value(forKey: "artistIMG") as? String)!, time: ((arrayTemp[i] as AnyObject).value(forKey: "upload-time") as? String)!))
                 }
-                self.chartTableView2.reloadData()
             }
-            self.chartTableView2.reloadData()
             completion()
         }
     }
@@ -154,10 +148,9 @@ class chartTableViewController: UIViewController, UITableViewDelegate, UITableVi
                     for i in 0..<arrayTemp.count{
                         self.cchartItemList.append(chartItem(artist: ((arrayTemp[i] as AnyObject).value(forKey: "artist") as? String)!, title: ((arrayTemp[i] as AnyObject).value(forKey: "title") as? String)!, imageurl: ((arrayTemp[i] as AnyObject).value(forKey: "album-img") as? String)!, musicid: ((arrayTemp[i] as AnyObject).value(forKey: "music-id") as? String)!, like: ((arrayTemp[i] as AnyObject).value(forKey: "like") as? Int)!, gerne: ((arrayTemp[i] as AnyObject).value(forKey: "genre") as? String)!, artistimage: ((arrayTemp[i] as AnyObject).value(forKey: "artistIMG") as? String)!, time: ((arrayTemp[i] as AnyObject).value(forKey: "upload-time") as? String)!))
                     }
-                    self.chartTableView2.reloadData()
                 }
-                self.chartTableView2.reloadData()
             }
+            self.chartTableView2.reloadData()
         }
     }
     

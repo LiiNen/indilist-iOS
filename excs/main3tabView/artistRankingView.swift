@@ -22,14 +22,8 @@ class artistRankingView: UIViewController, UITableViewDelegate, UITableViewDataS
         cell.artistGenreLabel.text = row.genre
         cell.rankingLabel.text = String(indexPath.row + 1)
         cell.userImage.image = UIImage(named: "defaultUserImage")
-        Alamofire.request(row.photourl).responseImage { response in
-            if let image = response.result.value{
-                cell.userImage.layer.masksToBounds = true
-                cell.userImage.image = image
-                cell.userImage.layer.cornerRadius = cell.userImage.bounds.size.width / 2
-            }
-        }
         
+        cell.userImage.af_setImage(withURL: URL(string: row.photourl)!)
         return cell
     }
     

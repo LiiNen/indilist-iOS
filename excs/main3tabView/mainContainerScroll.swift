@@ -38,13 +38,8 @@ class mainContainerScroll: UIViewController, UITableViewDataSource, UITableViewD
         cell.labelArtist.text = row.artist
         cell.imageMusic.image = UIImage(named: "defaultMusicImage")
         
+        cell.imageMusic.af_setImage(withURL: URL(string: row.imageurl)!)
         
-        Alamofire.request(row.imageurl).responseImage{
-            response in
-            if let image = response.result.value{
-                cell.imageMusic.image = image
-            }
-        }
         cell.musicId = row.musicid
         cell.info = ["artist" : row.artist, "title" : row.title, "music-id" : row.musicid, "album-img" : row.imageurl, "like" : row.like, "gerne" : row.gerne, "artistIMG" : row.artistimage, "upload-time" : row.time] as [String : Any]
         cell.musicInfoBtn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
@@ -111,10 +106,7 @@ class mainContainerScroll: UIViewController, UITableViewDataSource, UITableViewD
                 for i in 0..<5{
                     self.chartItemList.append(chartItem(artist: ((arrayTemp[i] as AnyObject).value(forKey: "artist") as? String)!, title: ((arrayTemp[i] as AnyObject).value(forKey: "title") as? String)!, imageurl: ((arrayTemp[i] as AnyObject).value(forKey: "album-img") as? String)!, musicid: ((arrayTemp[i] as AnyObject).value(forKey: "music-id") as? String)!, like: ((arrayTemp[i] as AnyObject).value(forKey: "like") as? Int)!, gerne: ((arrayTemp[i] as AnyObject).value(forKey: "genre") as? String)!, artistimage: ((arrayTemp[i] as AnyObject).value(forKey: "artistIMG") as? String)!, time: ((arrayTemp[i] as AnyObject).value(forKey: "upload-time") as? String)!))
                 }
-                self.charTableView.reloadData()
             }
-            //print(self.chartItemList)
-            self.charTableView.reloadData()
             completion()
         }
     }
