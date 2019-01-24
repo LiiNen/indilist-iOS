@@ -80,6 +80,8 @@ class checkView: UIViewController, UITextFieldDelegate {
         pwChkText.delegate = self
         nameText.delegate = self
         emailText.delegate = self
+        
+        self.hideKeyboardWhenTappedAround()
     }
     
     override func didReceiveMemoryWarning() {

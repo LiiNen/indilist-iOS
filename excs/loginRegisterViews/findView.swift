@@ -30,6 +30,8 @@ class findView: UIViewController, UITextFieldDelegate {
         idEmailText.delegate = self
         pwIdText.delegate = self
         pwEmailText.delegate = self
+        
+        self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
     }
 

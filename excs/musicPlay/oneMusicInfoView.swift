@@ -113,6 +113,8 @@ class oneMusicInfoView: UIViewController, UITableViewDelegate, UITableViewDataSo
             print("ss")
             self.commentList.reloadData()
         })
+        
+        self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
     }
     

@@ -28,6 +28,8 @@ class sideMenu201_PW: UIViewController, UITextFieldDelegate {
         pw1.delegate = self
         pw2.delegate = self
         pw3.delegate = self
+        
+        self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
     }
 

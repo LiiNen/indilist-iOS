@@ -58,6 +58,8 @@ class artistRegisterView: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         NotificationCenter.default.post(name: NSNotification.Name("menuDo1"), object: nil)
         NotificationCenter.default.post(name: NSNotification.Name("menuDo2"), object: nil)
         NotificationCenter.default.post(name: NSNotification.Name("menuDo3"), object: nil)
+        
+        self.hideKeyboardWhenTappedAround()
     }
 
     override func didReceiveMemoryWarning() {

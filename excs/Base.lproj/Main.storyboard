@@ -1117,7 +1117,7 @@ THE SOFTWARE.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2149.5999999999999" y="3709.2953523238384"/>
+            <point key="canvasLocation" x="2150" y="3710"/>
         </scene>
         <!-- -->
         <scene sceneID="Och-Sd-q2s">
@@ -6245,8 +6245,8 @@ THE SOFTWARE.</string>
         <image name="starimage" width="40" height="38"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MZ4-KP-keT"/>
-        <segue reference="4HY-y4-odK"/>
+        <segue reference="K08-YY-JQt"/>
+        <segue reference="SGt-U2-fx7"/>
         <segue reference="Dn3-lJ-4FW"/>
         <segue reference="IkX-3u-ngY"/>
         <segue reference="f6Y-T2-Qhk"/>
@@ -6256,6 +6256,6 @@ THE SOFTWARE.</string>
         <segue reference="krT-3R-Rmy"/>
         <segue reference="am1-ek-ZGU"/>
         <segue reference="A8I-uT-9XK"/>
-        <segue reference="IW7-af-u1E"/>
+        <segue reference="Yhc-qZ-05A"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -166,6 +166,8 @@ class sideMenu201: UIViewController, UITextFieldDelegate {
         idText.delegate = self
         nameText.delegate = self
         emailText.delegate = self
+        
+        self.hideKeyboardWhenTappedAround()
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
