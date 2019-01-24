@@ -127,30 +127,35 @@ class chartTableViewController: UIViewController, UITableViewDelegate, UITableVi
         let gurl = "https://indi-list.com/GetListByGenre"
         let headers = ["Content-Type" : "application/json"]
         var para : Parameters = ["limit" : 100, "genre" : ""]
-        para["genre"] = UserDefaults.standard.value(forKey: "chartgenres") as! String
-        if(UserDefaults.standard.string(forKey: "chartgenres")! == "인기차트"){
-            
+        var tempStr = String()
+        tempStr = UserDefaults.standard.value(forKey: "chartgenres") as! String
+        para["genre"] = tempStr
+        if(tempStr == "인기차트"){
             tchartLoad(completion:{
                 self.chartTableView2.reloadData()
             })
         }
-        else if(UserDefaults.standard.string(forKey: "chartgenres")! == "최신차트"){
+        else if(tempStr == "최신차트"){
             tqchartLoad(completion:{
                 self.chartTableView2.reloadData()
             })
         }
         else{
             Alamofire.request(gurl, method: .post, parameters: para, encoding: JSONEncoding.default, headers : headers).responseJSON { response in
-                
+                print(response.result.value)
                 if let json = response.result.value{
                     self.cchartItemList.removeAll()
                     let arrayTemp : NSArray = json as! NSArray
                     for i in 0..<arrayTemp.count{
                         self.cchartItemList.append(chartItem(artist: ((arrayTemp[i] as AnyObject).value(forKey: "artist") as? String)!, title: ((arrayTemp[i] as AnyObject).value(forKey: "title") as? String)!, imageurl: ((arrayTemp[i] as AnyObject).value(forKey: "album-img") as? String)!, musicid: ((arrayTemp[i] as AnyObject).value(forKey: "music-id") as? String)!, like: ((arrayTemp[i] as AnyObject).value(forKey: "like") as? Int)!, gerne: ((arrayTemp[i] as AnyObject).value(forKey: "genre") as? String)!, artistimage: ((arrayTemp[i] as AnyObject).value(forKey: "artistIMG") as? String)!, time: ((arrayTemp[i] as AnyObject).value(forKey: "upload-time") as? String)!))
                     }
+                    self.chartTableView2.reloadData()
+                }
+                else{
+                    self.cchartItemList.removeAll()
+                    self.chartTableView2.reloadData()
                 }
             }
-            self.chartTableView2.reloadData()
         }
     }
     
