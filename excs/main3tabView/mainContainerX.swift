@@ -76,51 +76,16 @@ class mainContainerX: UIViewController {
                 self.artist7.text = ((arrayTemp[6] as AnyObject).value(forKey: "artist") as? String)!
                 self.artist8.text = ((arrayTemp[7] as AnyObject).value(forKey: "artist") as? String)!
                 self.artist9.text = ((arrayTemp[8] as AnyObject).value(forKey: "artist") as? String)!
-                Alamofire.request(((arrayTemp[0] as AnyObject).value(forKey: "album-img") as? String)!).responseImage { response in
-                    if let image = response.result.value{
-                        self.image1.image = image
-                    }
-                }
-                Alamofire.request(((arrayTemp[1] as AnyObject).value(forKey: "album-img") as? String)!).responseImage { response in
-                    if let image = response.result.value{
-                        self.image2.image = image
-                    }
-                }
-                Alamofire.request(((arrayTemp[2] as AnyObject).value(forKey: "album-img") as? String)!).responseImage { response in
-                    if let image = response.result.value{
-                        self.image3.image = image
-                    }
-                }
-                Alamofire.request(((arrayTemp[3] as AnyObject).value(forKey: "album-img") as? String)!).responseImage { response in
-                    if let image = response.result.value{
-                        self.image4.image = image
-                    }
-                }
-                Alamofire.request(((arrayTemp[4] as AnyObject).value(forKey: "album-img") as? String)!).responseImage { response in
-                    if let image = response.result.value{
-                        self.image5.image = image
-                    }
-                }
-                Alamofire.request(((arrayTemp[5] as AnyObject).value(forKey: "album-img") as? String)!).responseImage { response in
-                    if let image = response.result.value{
-                        self.image6.image = image
-                    }
-                }
-                Alamofire.request(((arrayTemp[6] as AnyObject).value(forKey: "album-img") as? String)!).responseImage { response in
-                    if let image = response.result.value{
-                        self.image7.image = image
-                    }
-                }
-                Alamofire.request(((arrayTemp[7] as AnyObject).value(forKey: "album-img") as? String)!).responseImage { response in
-                    if let image = response.result.value{
-                        self.image8.image = image
-                    }
-                }
-                Alamofire.request(((arrayTemp[8] as AnyObject).value(forKey: "album-img") as? String)!).responseImage { response in
-                    if let image = response.result.value{
-                        self.image9.image = image
-                    }
-                }
+                self.image1.af_setImage(withURL: URL(string: ((arrayTemp[0] as AnyObject).value(forKey: "album-img") as? String)!)!)
+                self.image2.af_setImage(withURL: URL(string: ((arrayTemp[1] as AnyObject).value(forKey: "album-img") as? String)!)!)
+                self.image3.af_setImage(withURL: URL(string: ((arrayTemp[2] as AnyObject).value(forKey: "album-img") as? String)!)!)
+                self.image4.af_setImage(withURL: URL(string: ((arrayTemp[3] as AnyObject).value(forKey: "album-img") as? String)!)!)
+                self.image5.af_setImage(withURL: URL(string: ((arrayTemp[4] as AnyObject).value(forKey: "album-img") as? String)!)!)
+                self.image6.af_setImage(withURL: URL(string: ((arrayTemp[5] as AnyObject).value(forKey: "album-img") as? String)!)!)
+                self.image7.af_setImage(withURL: URL(string: ((arrayTemp[6] as AnyObject).value(forKey: "album-img") as? String)!)!)
+                self.image8.af_setImage(withURL: URL(string: ((arrayTemp[7] as AnyObject).value(forKey: "album-img") as? String)!)!)
+                self.image9.af_setImage(withURL: URL(string: ((arrayTemp[8] as AnyObject).value(forKey: "album-img") as? String)!)!)
+                
             }
             completion()
         }
