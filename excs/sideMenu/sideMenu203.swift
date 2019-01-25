@@ -39,7 +39,11 @@ class sideMenu203: UIViewController, UITableViewDelegate, UITableViewDataSource 
         let row = noticeItemList[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "noticeTableCell")
         cell?.textLabel?.text = row.title
-        cell?.detailTextLabel?.text = row.time
+        let timeString = row.time as String
+        let splited = timeString.components(separatedBy: "-")
+        let splited2array = Array(splited[2])
+        let daytext : String = "\(splited2array[0])\(splited2array[1])"
+        cell?.detailTextLabel?.text = splited[0] + "." + splited[1] + "." + daytext
         return cell!
     }
     
