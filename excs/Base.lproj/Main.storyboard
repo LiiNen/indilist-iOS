@@ -3895,7 +3895,7 @@ THE SOFTWARE.</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rb-qj-pf8">
-                                                    <rect key="frame" x="227.5" y="9" width="100" height="31.5"/>
+                                                    <rect key="frame" x="227.5" y="12" width="100" height="26"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="2Ce-w6-VFJ"/>
                                                     </constraints>
@@ -3904,7 +3904,7 @@ THE SOFTWARE.</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WtM-dp-6Xi">
-                                                    <rect key="frame" x="344.5" y="19" width="11" height="11.5"/>
+                                                    <rect key="frame" x="344.5" y="19.5" width="11" height="11"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="11.1" id="77q-dA-LFY"/>
                                                         <constraint firstAttribute="height" constant="11.1" id="bUI-Au-iwb"/>
@@ -3915,10 +3915,10 @@ THE SOFTWARE.</string>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQb-Z5-Igw">
-                                                    <rect key="frame" x="322.5" y="18.5" width="12.5" height="12.5"/>
+                                                    <rect key="frame" x="316.5" y="12.5" width="24.5" height="25"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="12.800000000000001" id="QoM-VJ-Z8X"/>
-                                                        <constraint firstAttribute="height" constant="12.800000000000001" id="Ung-9P-KjZ"/>
+                                                        <constraint firstAttribute="width" constant="24.800000000000001" id="QoM-VJ-Z8X"/>
+                                                        <constraint firstAttribute="height" constant="24.800000000000001" id="Ung-9P-KjZ"/>
                                                     </constraints>
                                                     <state key="normal" image="info"/>
                                                     <connections>
@@ -3932,9 +3932,9 @@ THE SOFTWARE.</string>
                                                 <constraint firstItem="WtM-dp-6Xi" firstAttribute="leading" secondItem="9rb-qj-pf8" secondAttribute="trailing" constant="17" id="F8M-yB-rr4"/>
                                                 <constraint firstItem="Kk6-Wc-zf8" firstAttribute="centerY" secondItem="zJK-v6-5Lz" secondAttribute="centerY" id="Izf-o4-TjT"/>
                                                 <constraint firstItem="Kk6-Wc-zf8" firstAttribute="leading" secondItem="zJK-v6-5Lz" secondAttribute="leading" constant="17.699999999999999" id="KHM-8O-Roe"/>
-                                                <constraint firstItem="WtM-dp-6Xi" firstAttribute="leading" secondItem="EQb-Z5-Igw" secondAttribute="trailing" constant="9.4000000000000004" id="T7v-8Y-4Uh"/>
+                                                <constraint firstItem="WtM-dp-6Xi" firstAttribute="leading" secondItem="EQb-Z5-Igw" secondAttribute="trailing" constant="3.3999999999999999" id="T7v-8Y-4Uh"/>
                                                 <constraint firstItem="cQG-xs-tZd" firstAttribute="leading" secondItem="Kk6-Wc-zf8" secondAttribute="trailing" constant="13.9" id="adN-C1-r5l"/>
-                                                <constraint firstItem="EQb-Z5-Igw" firstAttribute="leading" secondItem="cQG-xs-tZd" secondAttribute="trailing" constant="9.4000000000000004" id="dmq-L4-Pb7"/>
+                                                <constraint firstItem="EQb-Z5-Igw" firstAttribute="leading" secondItem="cQG-xs-tZd" secondAttribute="trailing" constant="3.3999999999999999" id="dmq-L4-Pb7"/>
                                                 <constraint firstItem="EQb-Z5-Igw" firstAttribute="centerY" secondItem="zJK-v6-5Lz" secondAttribute="centerY" id="e2f-qP-IAY"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="9rb-qj-pf8" secondAttribute="bottom" constant="1" id="ghP-0N-hem"/>
                                                 <constraint firstItem="9rb-qj-pf8" firstAttribute="top" secondItem="zJK-v6-5Lz" secondAttribute="topMargin" constant="1" id="oBi-Dx-xLV"/>
@@ -5983,7 +5983,7 @@ THE SOFTWARE.</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8IC-xF-hOc">
-                                                    <rect key="frame" x="234.5" y="9" width="100" height="31.5"/>
+                                                    <rect key="frame" x="234.5" y="12" width="100" height="26"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="ggx-91-5gR"/>
                                                     </constraints>
@@ -5992,7 +5992,7 @@ THE SOFTWARE.</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sn6-BQ-LlA">
-                                                    <rect key="frame" x="344.5" y="19" width="11" height="11.5"/>
+                                                    <rect key="frame" x="344.5" y="19.5" width="11" height="11"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="11.1" id="OQO-gN-Iak"/>
                                                         <constraint firstAttribute="width" constant="11.1" id="wNE-fr-NAF"/>
@@ -6003,10 +6003,10 @@ THE SOFTWARE.</string>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIL-F5-7hR">
-                                                    <rect key="frame" x="322.5" y="18.5" width="12.5" height="12.5"/>
+                                                    <rect key="frame" x="316.5" y="12.5" width="24.5" height="25"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="12.800000000000001" id="6M8-SB-nvb"/>
-                                                        <constraint firstAttribute="width" constant="12.800000000000001" id="8mj-yD-iKq"/>
+                                                        <constraint firstAttribute="height" constant="24.800000000000001" id="6M8-SB-nvb"/>
+                                                        <constraint firstAttribute="width" constant="24.800000000000001" id="8mj-yD-iKq"/>
                                                     </constraints>
                                                     <state key="normal" image="info"/>
                                                     <connections>
@@ -6017,14 +6017,14 @@ THE SOFTWARE.</string>
                                             <constraints>
                                                 <constraint firstItem="Sn6-BQ-LlA" firstAttribute="leading" secondItem="8IC-xF-hOc" secondAttribute="trailing" constant="10" id="0Vn-eu-qXz"/>
                                                 <constraint firstItem="8NP-7L-hv6" firstAttribute="centerY" secondItem="H4m-JP-cJw" secondAttribute="centerY" id="5fb-Og-HN4"/>
-                                                <constraint firstItem="Sn6-BQ-LlA" firstAttribute="leading" secondItem="AIL-F5-7hR" secondAttribute="trailing" constant="9.4000000000000004" id="A22-t4-RQ7"/>
+                                                <constraint firstItem="Sn6-BQ-LlA" firstAttribute="leading" secondItem="AIL-F5-7hR" secondAttribute="trailing" constant="3.3999999999999999" id="A22-t4-RQ7"/>
                                                 <constraint firstItem="dsN-1p-Yh4" firstAttribute="centerY" secondItem="H4m-JP-cJw" secondAttribute="centerY" id="BLz-8m-0um"/>
                                                 <constraint firstItem="dsN-1p-Yh4" firstAttribute="leading" secondItem="H4m-JP-cJw" secondAttribute="leading" constant="17.699999999999999" id="H7m-fu-sD9"/>
                                                 <constraint firstItem="8IC-xF-hOc" firstAttribute="top" secondItem="H4m-JP-cJw" secondAttribute="topMargin" constant="1" id="MH0-mV-hdx"/>
                                                 <constraint firstAttribute="trailing" secondItem="Sn6-BQ-LlA" secondAttribute="trailing" constant="19.399999999999999" id="OEz-U8-wWk"/>
                                                 <constraint firstItem="AIL-F5-7hR" firstAttribute="centerY" secondItem="H4m-JP-cJw" secondAttribute="centerY" id="Uty-kY-nEt"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="8IC-xF-hOc" secondAttribute="bottom" constant="1" id="fvg-mU-dxL"/>
-                                                <constraint firstItem="AIL-F5-7hR" firstAttribute="leading" secondItem="8NP-7L-hv6" secondAttribute="trailing" constant="9.4000000000000004" id="i6l-yG-6Mu"/>
+                                                <constraint firstItem="AIL-F5-7hR" firstAttribute="leading" secondItem="8NP-7L-hv6" secondAttribute="trailing" constant="3.3999999999999999" id="i6l-yG-6Mu"/>
                                                 <constraint firstItem="Sn6-BQ-LlA" firstAttribute="centerY" secondItem="H4m-JP-cJw" secondAttribute="centerY" id="qeJ-Hu-yWM"/>
                                                 <constraint firstItem="8NP-7L-hv6" firstAttribute="leading" secondItem="dsN-1p-Yh4" secondAttribute="trailing" constant="13.9" id="xfw-vR-AiR"/>
                                             </constraints>

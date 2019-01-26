@@ -55,7 +55,7 @@ class artistPageTab2: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         cell.artistName.isHidden = true
         cell.albumArtImageView.layer.masksToBounds = true
-        if let a = UserDefaults.standard.string(forKey: "notME"){
+        if UserDefaults.standard.string(forKey: "notME") != nil{
             cell.deleteBtn.isEnabled = false
             cell.deleteBtn.isHidden = true
         }
@@ -64,20 +64,15 @@ class artistPageTab2: UIViewController, UITableViewDelegate, UITableViewDataSour
             NotificationCenter.default.addObserver(self, selector: #selector(alertFunc), name: NSNotification.Name("deleteAlert" + cell.musicid), object: nil)
         }
         cell.albumArtImageView.image = UIImage(named: "defaultMusicImage")
-        Alamofire.request(row.imageurl).responseImage { response in
-            print("---------------==========")
-            print(response)
-            if let image = response.result.value {
-                cell.albumArtImageView.image = image
-            }
-        }
+        cell.albumArtImageView.af_setImage(withURL: URL(string: row.imageurl)!)
+        cell.infoBtnBtn.imageEdgeInsets = UIEdgeInsets(top: CGFloat(6), left: CGFloat(6), bottom: CGFloat(6), right: CGFloat(6))
         
         return cell
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let a = UserDefaults.standard.string(forKey: "notME"){
+        if UserDefaults.standard.string(forKey: "notME") != nil{
             
             musicListLoadId(completion: {
                 self.musicTable.reloadData()
