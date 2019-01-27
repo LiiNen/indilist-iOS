@@ -299,12 +299,12 @@ class sideMenu201: UIViewController, UITextFieldDelegate {
         let temp = UserDefaults.standard.string(forKey: "mainState")
         let str = "ShowTheView" + temp!
         NotificationCenter.default.post(name: NSNotification.Name(str), object: nil)
-        print("생기다")
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         NotificationCenter.default.post(name: NSNotification.Name("MenuClose"), object: nil)
     }
+    
     var imageOk = 0
     var userImagePicker = UIImagePickerController()
     @IBAction func imagePickBtn(_ sender: Any) {

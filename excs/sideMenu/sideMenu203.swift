@@ -54,6 +54,10 @@ class sideMenu203: UIViewController, UITableViewDelegate, UITableViewDataSource 
         NotificationCenter.default.post(name: NSNotification.Name("menuDo2"), object: nil)
         NotificationCenter.default.post(name: NSNotification.Name("menuDo3"), object: nil)
         // Do any additional setup after loading the view.
+        NotificationCenter.default.post(name: NSNotification.Name("MenuOpen"), object: nil)
+        noticeLoad(completion: {
+            self.noticeTable.reloadData()
+        })
     }
     
     override func didReceiveMemoryWarning() {
@@ -113,12 +117,8 @@ class sideMenu203: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        NotificationCenter.default.post(name: NSNotification.Name("MenuOpen"), object: nil)
-        noticeLoad(completion: {
-            self.noticeTable.reloadData()
-        })
+        
     }
-    
     override func viewWillDisappear(_ animated: Bool) {
         NotificationCenter.default.post(name: NSNotification.Name("MenuClose"), object: nil)
         
