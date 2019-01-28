@@ -58,15 +58,21 @@ class customTabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+        super.viewDidAppear(animated)
         
     }
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 //        let temp = tabBarController?.selectedIndex
 //        tabBarController?.selectedIndex = 1
 //        tabBarController?.selectedIndex = 2
 //        tabBarController?.selectedIndex = temp!
-        
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     @objc func errorProtection(){
         let temp = self.selectedIndex

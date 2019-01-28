@@ -175,6 +175,7 @@ class sideMenu201: UIViewController, UITextFieldDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         NotificationCenter.default.post(name: NSNotification.Name("MenuOpen"), object: nil)
         
         
