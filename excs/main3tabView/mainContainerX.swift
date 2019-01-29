@@ -41,8 +41,52 @@ class mainContainerX: UIViewController {
     @IBOutlet weak var artist8: UILabel!
     @IBOutlet weak var artist9: UILabel!
     
+    var imageGroup = [UIImageView]()
+    var titleGroup = [UILabel]()
+    var artistGroup = [UILabel]()
+    
+    func imageAppend(){
+        imageGroup.append(image1)
+        imageGroup.append(image2)
+        imageGroup.append(image3)
+        imageGroup.append(image4)
+        imageGroup.append(image5)
+        imageGroup.append(image6)
+        imageGroup.append(image7)
+        imageGroup.append(image8)
+        imageGroup.append(image9)
+    }
+    
+    func titleAppend(){
+        titleGroup.append(title1)
+        titleGroup.append(title2)
+        titleGroup.append(title3)
+        titleGroup.append(title4)
+        titleGroup.append(title5)
+        titleGroup.append(title6)
+        titleGroup.append(title7)
+        titleGroup.append(title8)
+        titleGroup.append(title9)
+    }
+    
+    func artistAppend(){
+        artistGroup.append(artist1)
+        artistGroup.append(artist2)
+        artistGroup.append(artist3)
+        artistGroup.append(artist4)
+        artistGroup.append(artist5)
+        artistGroup.append(artist6)
+        artistGroup.append(artist7)
+        artistGroup.append(artist8)
+        artistGroup.append(artist9)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleAppend()
+        artistAppend()
+        imageAppend()
+        
         lateLoad(completion:{
             print("lateload fin")
         })
@@ -55,41 +99,31 @@ class mainContainerX: UIViewController {
         let para : Parameters = [ "num" : 9]
         
         Alamofire.request(url, method: .post, parameters: para, encoding: JSONEncoding.default, headers : headers).responseJSON { response in
-            //print(">>", response)
+            
             if let json = response.result.value{
-                let arrayTemp : NSArray = json as! NSArray
-                self.title1.text = ((arrayTemp[0] as AnyObject).value(forKey: "title") as? String)!
-                self.title2.text = ((arrayTemp[1] as AnyObject).value(forKey: "title") as? String)!
-                self.title3.text = ((arrayTemp[2] as AnyObject).value(forKey: "title") as? String)!
-                self.title4.text = ((arrayTemp[3] as AnyObject).value(forKey: "title") as? String)!
-                self.title5.text = ((arrayTemp[4] as AnyObject).value(forKey: "title") as? String)!
-                self.title6.text = ((arrayTemp[5] as AnyObject).value(forKey: "title") as? String)!
-                self.title7.text = ((arrayTemp[6] as AnyObject).value(forKey: "title") as? String)!
-                self.title8.text = ((arrayTemp[7] as AnyObject).value(forKey: "title") as? String)!
-                self.title9.text = ((arrayTemp[8] as AnyObject).value(forKey: "title") as? String)!
-                self.artist1.text = ((arrayTemp[0] as AnyObject).value(forKey: "artist") as? String)!
-                self.artist2.text = ((arrayTemp[1] as AnyObject).value(forKey: "artist") as? String)!
-                self.artist3.text = ((arrayTemp[2] as AnyObject).value(forKey: "artist") as? String)!
-                self.artist4.text = ((arrayTemp[3] as AnyObject).value(forKey: "artist") as? String)!
-                self.artist5.text = ((arrayTemp[4] as AnyObject).value(forKey: "artist") as? String)!
-                self.artist6.text = ((arrayTemp[5] as AnyObject).value(forKey: "artist") as? String)!
-                self.artist7.text = ((arrayTemp[6] as AnyObject).value(forKey: "artist") as? String)!
-                self.artist8.text = ((arrayTemp[7] as AnyObject).value(forKey: "artist") as? String)!
-                self.artist9.text = ((arrayTemp[8] as AnyObject).value(forKey: "artist") as? String)!
-                self.image1.af_setImage(withURL: URL(string: ((arrayTemp[0] as AnyObject).value(forKey: "album-img") as? String)!)!)
-                self.image2.af_setImage(withURL: URL(string: ((arrayTemp[1] as AnyObject).value(forKey: "album-img") as? String)!)!)
-                self.image3.af_setImage(withURL: URL(string: ((arrayTemp[2] as AnyObject).value(forKey: "album-img") as? String)!)!)
-                self.image4.af_setImage(withURL: URL(string: ((arrayTemp[3] as AnyObject).value(forKey: "album-img") as? String)!)!)
-                self.image5.af_setImage(withURL: URL(string: ((arrayTemp[4] as AnyObject).value(forKey: "album-img") as? String)!)!)
-                self.image6.af_setImage(withURL: URL(string: ((arrayTemp[5] as AnyObject).value(forKey: "album-img") as? String)!)!)
-                self.image7.af_setImage(withURL: URL(string: ((arrayTemp[6] as AnyObject).value(forKey: "album-img") as? String)!)!)
-                self.image8.af_setImage(withURL: URL(string: ((arrayTemp[7] as AnyObject).value(forKey: "album-img") as? String)!)!)
-                self.image9.af_setImage(withURL: URL(string: ((arrayTemp[8] as AnyObject).value(forKey: "album-img") as? String)!)!)
                 
+                let arrayTemp : NSArray = json as! NSArray
+                for i in 0..<9{
+                    self.newItemList.append(newItem(artist: ((arrayTemp[i] as AnyObject).value(forKey: "artist") as? String)!, title: ((arrayTemp[i] as AnyObject).value(forKey: "title") as? String)!, imageurl: ((arrayTemp[i] as AnyObject).value(forKey: "album-img") as? String)!, musicid: ((arrayTemp[i] as AnyObject).value(forKey: "music-id") as? String)!, like: ((arrayTemp[i] as AnyObject).value(forKey: "like") as? Int)!, gerne: ((arrayTemp[i] as AnyObject).value(forKey: "genre") as? String)!, artistimage: ((arrayTemp[i] as AnyObject).value(forKey: "artistIMG") as? String)!, time: ((arrayTemp[i] as AnyObject).value(forKey: "upload-time") as? String)!))
+                    self.titleGroup[i].text = self.newItemList[i].title
+                    self.artistGroup[i].text = self.newItemList[i].artist
+                    self.imageGroup[i].af_setImage(withURL: URL(string: self.newItemList[i].imageurl)!)
+                }
             }
             completion()
         }
     }
+    struct newItem{
+        var artist : String
+        var title : String
+        var imageurl : String
+        var musicid : String
+        var like : Int
+        var gerne : String
+        var artistimage : String
+        var time : String
+    }
+    var newItemList = [newItem]()
     
 
     /*
