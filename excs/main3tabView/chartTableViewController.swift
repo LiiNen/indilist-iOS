@@ -178,5 +178,4 @@ class chartTableViewController: UIViewController, UITableViewDelegate, UITableVi
         })
     }
     
-
 }

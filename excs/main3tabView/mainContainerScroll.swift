@@ -110,7 +110,6 @@ class mainContainerScroll: UIViewController, UITableViewDataSource, UITableViewD
             completion()
         }
     }
-    
     func showToast(message : String) {
         
         let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - self.view.frame.size.width*0.3, y: self.view.frame.size.height-100, width: self.view.frame.size.width*0.6, height: 35))
@@ -131,5 +130,4 @@ class mainContainerScroll: UIViewController, UITableViewDataSource, UITableViewD
     }
     
 }
-
 
