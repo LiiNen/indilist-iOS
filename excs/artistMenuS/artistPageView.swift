@@ -31,10 +31,6 @@ class artistPageView: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.post(name: NSNotification.Name("MenuOpen"), object: nil)
-        
-        likeconsider(completion:{
-            
-        })
     }
     func imageupload(url : String){
         Alamofire.request(url).responseImage { response in
@@ -84,14 +80,17 @@ class artistPageView: UIViewController {
                 else{
                     let pinkheart = UIImage(named: "hghpink")!
                     let grayheart = UIImage(named: "hghgray")!
+                    print(swiftyJsonVar)
                     if(swiftyJsonVar == true){
                         print("like liek")
                         self.heartimage.image = pinkheart
+                        self.rets = "true"
                         completion()
                     }
                     else{
                         print("sidisidid")
                         self.heartimage.image = grayheart
+                        self.rets = "false"
                         completion()
                     }
                 }
