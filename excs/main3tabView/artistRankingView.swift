@@ -51,13 +51,13 @@ class artistRankingView: UIViewController, UITableViewDelegate, UITableViewDataS
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        recLoad(completion: {
-            self.recTableView.reloadData()
-        })
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("artistReload"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(recLoad), name: NSNotification.Name("artistReload"), object: nil)
+        recLoad()
         // Do any additional setup after loading the view.
     }
     
-    func recLoad(completion: @escaping ()->()){
+    @objc func recLoad(){
         let url = "https://indi-list.com/GetArtistRanking"
         let headers = ["Content-Type" : "application/json"]
         let para : Parameters = ["num" : 100]
@@ -70,8 +70,6 @@ class artistRankingView: UIViewController, UITableViewDelegate, UITableViewDataS
                 }
                 self.recTableView.reloadData()
             }
-            self.recTableView.reloadData()
-            completion()
         }
     }
     

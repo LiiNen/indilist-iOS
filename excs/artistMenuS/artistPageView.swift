@@ -157,9 +157,6 @@ class artistPageView: UIViewController {
         })
     }
     
-    
-    
-    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -280,6 +277,7 @@ class artistPageView: UIViewController {
         let temp = UserDefaults.standard.string(forKey: "mainState")
         let str = "ShowTheView" + temp!
         NotificationCenter.default.post(name: NSNotification.Name(str), object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name("artistReload"), object: nil)
         print("생기다")
         
     }
