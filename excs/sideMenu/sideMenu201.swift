@@ -22,7 +22,7 @@ class sideMenu201: UIViewController, UITextFieldDelegate {
         }
         else{
             let url = "https://www.indi-list.com/api/ModifyPersonalInfo"
-            var headers = ["x-access-token" : UserDefaults.standard.string(forKey: "loginToken")!]
+            let headers = ["x-access-token" : UserDefaults.standard.string(forKey: "loginToken")!]
             var para : Parameters = ["newnick" : UserDefaults.standard.string(forKey: "loginName")!, "newemail" : UserDefaults.standard.string(forKey: "loginEmail")!]
             if(emailOk == 1){
                 para["newemail"] = emailText.text!

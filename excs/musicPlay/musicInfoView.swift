@@ -60,7 +60,6 @@ class musicInfoView: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         Alamofire.request(url, method: .post, parameters: para, encoding: JSONEncoding.default, headers : headers).responseJSON { response in
             
-            let swiftyJsonVar : JSON
             print(response)
             if((response.result.value) != nil) {
                 

@@ -176,9 +176,9 @@ class musicPlayerContainerView: UIViewController {
         self.para["mid"] = mid
         
         let albumArtURL = URL(string: temp[self.indexNum]["album-img"] as! String)
-        musicTitle.text = temp[self.indexNum]["title"] as! String
+        musicTitle.text = (temp[self.indexNum]["title"] as! String)
         musicTitle.adjustsFontSizeToFitWidth = true
-        musicArtist.text = temp[self.indexNum]["artist"] as! String
+        musicArtist.text = (temp[self.indexNum]["artist"] as! String)
         musicArtist.adjustsFontSizeToFitWidth = true
         
         Alamofire.request(albumArtURL!).responseImage{ response in

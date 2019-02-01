@@ -58,8 +58,7 @@ class loginView: UIViewController, UITextFieldDelegate {
         //
         
         Alamofire.request(url, method: .post, parameters: para, encoding: JSONEncoding.default, headers : headers).responseString { response in
-            print(para["id"])
-            print(para["pw"])
+            
             print(response)
             if(response.result.isSuccess){
                 let retString = (response.value ?? "")

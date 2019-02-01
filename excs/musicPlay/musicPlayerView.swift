@@ -105,7 +105,8 @@ class musicPlayerView: UIViewController {
         let uurl = url
         
         let musicIID = nowp["music-id"] as? String
-        let likepara1 : Parameters = ["mid" : musicIID]
+        var likepara1 : Parameters = ["mid" : ""]
+        likepara1["mid"] = musicIID
         var likeheader1 = ["x-access-token" : ""]
         likeheader1["x-access-token"] = UserDefaults.standard.string(forKey: "loginToken")!
         Alamofire.request("https://indi-list.com/api/isLiked", method: .post, parameters: likepara1, encoding: JSONEncoding.default, headers: likeheader1).responseString { response in

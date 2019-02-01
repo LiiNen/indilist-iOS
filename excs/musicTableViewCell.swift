@@ -53,7 +53,7 @@ class musicTableViewCell: UITableViewCell {
             print(headers)
             Alamofire.request("https://indi-list.com/api/deleteSong", method: .post, parameters: para, encoding: JSONEncoding.default, headers: headers).responseString { response in
                 print(response)
-                print(response.result.value)
+                print(response.result.value as Any)
             }
         }
         UserDefaults.standard.removeObject(forKey: "deleteAns")

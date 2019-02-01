@@ -108,11 +108,6 @@ class chartView: UIViewController {
             
             if((response.result.value) != nil) {
                 swiftyJsonVar = JSON(response.result.value!)
-                
-                for i in 0 ..< swiftyJsonVar.count {
-                    //print(swiftyJsonVar[i])
-                    //print(i, ". title name: " + swiftyJsonVar[i]["title"].string! + " // artist name: " + swiftyJsonVar[i]["artist"].string! + " // music-id: " + swiftyJsonVar[i]["music-id"].string!)
-                }
             }
             completion()
             

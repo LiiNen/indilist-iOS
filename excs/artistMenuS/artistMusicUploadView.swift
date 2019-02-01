@@ -100,8 +100,7 @@ class artistMusicUploadView: UIViewController, MPMediaPickerControllerDelegate {
     }
     func mediaPicker(_ mediaPicker: MPMediaPickerController, didPickMediaItems mediaItemCollection: MPMediaItemCollection) {
         self.dismiss(animated: true, completion: nil)
-        print("you picked: \(mediaItemCollection)")
-        let itemq = mediaItemCollection.items[0] as? MPMediaItem ?? MPMediaItem()
+        let itemq = mediaItemCollection.items[0] as MPMediaItem
         let urlq: URL? = itemq.value(forProperty: MPMediaItemPropertyAssetURL) as? URL
         exportiTunesSong(assetURL: urlq!)
         {
