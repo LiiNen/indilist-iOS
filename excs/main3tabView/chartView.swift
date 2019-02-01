@@ -45,7 +45,7 @@ class chartView: UIViewController {
         
      }
     @objc func menuDo2(){
-        self.view.bringSubview(toFront: sideContainer2)
+        self.view.bringSubviewToFront(sideContainer2)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("menuDo2"), object: nil)
         sideMenuConstraint.constant = self.view.bounds.size.width
     }
@@ -71,7 +71,7 @@ class chartView: UIViewController {
             else{
                 sideMenuOpen = true
                 sideMenuConstraint.constant = self.view.bounds.size.width-316
-                self.view.sendSubview(toBack: sideContainer2)
+                self.view.sendSubviewToBack(sideContainer2)
                 outtouchBtn.isEnabled = true
                 outtouchBtn.isHidden = false
             }
@@ -133,7 +133,7 @@ class chartView: UIViewController {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("ShowTheView2"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(hideTheView2),name:NSNotification.Name("HidTheView2"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(showTheView2), name: NSNotification.Name("ShowTheView2"), object: nil)
-        self.view.sendSubview(toBack: sideContainer2)
+        self.view.sendSubviewToBack(sideContainer2)
         
     }
     

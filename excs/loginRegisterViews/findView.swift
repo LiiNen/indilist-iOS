@@ -99,9 +99,9 @@ class findView: UIViewController, UITextFieldDelegate {
     }
     
     func alertAc(mesAlert:String){
-        let myAlert = UIAlertController(title: "처리 완료", message: mesAlert, preferredStyle: UIAlertControllerStyle.alert);
+        let myAlert = UIAlertController(title: "처리 완료", message: mesAlert, preferredStyle: UIAlertController.Style.alert);
         
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
         
         myAlert.addAction(okAction)
         
@@ -109,7 +109,7 @@ class findView: UIViewController, UITextFieldDelegate {
     }
     
     func loadingAlert(){
-        let myAlert = UIAlertController(title: "잠시만 기다려주세요", message: "서버의 응답을 기다리는 중입니다.", preferredStyle: UIAlertControllerStyle.alert);
+        let myAlert = UIAlertController(title: "잠시만 기다려주세요", message: "서버의 응답을 기다리는 중입니다.", preferredStyle: UIAlertController.Style.alert);
     
         present(myAlert, animated: true, completion: nil)
     }

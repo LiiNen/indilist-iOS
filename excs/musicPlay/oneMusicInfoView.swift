@@ -96,7 +96,7 @@ class oneMusicInfoView: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
         loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        loadingIndicator.style = UIActivityIndicatorView.Style.gray
         loadingIndicator.startAnimating();
         
         alert.view.addSubview(loadingIndicator)
@@ -296,9 +296,9 @@ class oneMusicInfoView: UIViewController, UITableViewDelegate, UITableViewDataSo
     @IBOutlet weak var commentBtn: UIButton!
     
     func loginAlert(alertMessage : String){
-        let myAlert = UIAlertController(title: "경고", message: alertMessage, preferredStyle: UIAlertControllerStyle.alert);
+        let myAlert = UIAlertController(title: "경고", message: alertMessage, preferredStyle: UIAlertController.Style.alert);
         
-        let okAction = UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: nil)
+        let okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
         
         myAlert.addAction(okAction)
         
@@ -306,9 +306,9 @@ class oneMusicInfoView: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     func hnialert(alertMessage : String){
-        let myAlert = UIAlertController(title: "성공!", message: alertMessage, preferredStyle: UIAlertControllerStyle.alert);
+        let myAlert = UIAlertController(title: "성공!", message: alertMessage, preferredStyle: UIAlertController.Style.alert);
         
-        let okAction = UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: nil)
+        let okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
         
         myAlert.addAction(okAction)
         

@@ -240,8 +240,8 @@ class musicPlayerContainerView: UIViewController {
     
     func playMusic() {
         if(temp.count == 0){
-            let nonMusicAlert = UIAlertController(title: "", message: "플레이리스트에 노래가 없습니다", preferredStyle: UIAlertControllerStyle.alert);
-            let okAction = UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: nil)
+            let nonMusicAlert = UIAlertController(title: "", message: "플레이리스트에 노래가 없습니다", preferredStyle: UIAlertController.Style.alert);
+            let okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
             nonMusicAlert.addAction(okAction)
             present(nonMusicAlert, animated: true, completion: nil)
             return
@@ -266,7 +266,7 @@ class musicPlayerContainerView: UIViewController {
                     NotificationCenter.default.post(name: NSNotification.Name("loadReady"), object: nil)
                     NotificationCenter.default.post(name: NSNotification.Name("loadReady2"), object: nil)
                     do {
-                        try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, mode: AVAudioSessionModeDefault, options: .mixWithOthers)
+                        try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback, mode: AVAudioSession.Mode(rawValue: convertFromAVAudioSessionMode(AVAudioSession.Mode.default)), options: .mixWithOthers)
                         try AVAudioSession.sharedInstance().setActive(true)
                     } catch {
                         print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
@@ -326,8 +326,8 @@ class musicPlayerContainerView: UIViewController {
     
     @IBAction func albumArtBtn(_ sender: Any) {
         if(player.currentItem == nil){
-            let nonMusicAlert = UIAlertController(title: "", message: "재생중인 노래가 없습니다", preferredStyle: UIAlertControllerStyle.alert);
-            let okAction = UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: nil)
+            let nonMusicAlert = UIAlertController(title: "", message: "재생중인 노래가 없습니다", preferredStyle: UIAlertController.Style.alert);
+            let okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
             nonMusicAlert.addAction(okAction)
             present(nonMusicAlert, animated: true, completion: nil)
         }
@@ -382,4 +382,9 @@ class musicPlayerContainerView: UIViewController {
             toastLabel.removeFromSuperview()
         })
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromAVAudioSessionMode(_ input: AVAudioSession.Mode) -> String {
+	return input.rawValue
 }

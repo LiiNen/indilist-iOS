@@ -121,7 +121,7 @@ class ViewController: UIViewController {
             else{
                 sideMenuOpen = true
                 sideMenuConstraint.constant = self.view.bounds.size.width - 316
-                self.view.sendSubview(toBack: sideContainer1)
+                self.view.sendSubviewToBack(sideContainer1)
                 outtouchBtn.isEnabled = true
                 outtouchBtn.isHidden = false
             }
@@ -138,7 +138,7 @@ class ViewController: UIViewController {
     }
     
     @objc func menuDo1(){
-        self.view.bringSubview(toFront: sideContainer1)
+        self.view.bringSubviewToFront(sideContainer1)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("menuDo1"), object: nil)
         sideMenuConstraint.constant = self.view.bounds.size.width
     }
@@ -152,7 +152,7 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.view.sendSubview(toBack: sideContainer1)
+        self.view.sendSubviewToBack(sideContainer1)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("HidTheView1"), object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("ShowTheView1"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(hideTheView1),name:NSNotification.Name("HidTheView1"), object: nil)

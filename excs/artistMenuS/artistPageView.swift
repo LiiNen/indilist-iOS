@@ -283,9 +283,9 @@ class artistPageView: UIViewController {
     }
     
     func alertAc(mesAlert:String){
-        let myAlert = UIAlertController(title: "처리 완료", message: mesAlert, preferredStyle: UIAlertControllerStyle.alert);
+        let myAlert = UIAlertController(title: "처리 완료", message: mesAlert, preferredStyle: UIAlertController.Style.alert);
         
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
         
         myAlert.addAction(okAction)
         

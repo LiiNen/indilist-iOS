@@ -56,7 +56,7 @@ class artistView: UIViewController {
             else{
                 sideMenuOpen = true
                 sideMenuConstraint.constant = self.view.bounds.size.width-316
-                self.view.sendSubview(toBack: sideContainer3)
+                self.view.sendSubviewToBack(sideContainer3)
                 outtouchBtn.isEnabled = true
                 outtouchBtn.isHidden = false
             }
@@ -73,7 +73,7 @@ class artistView: UIViewController {
     
     
     @objc func menuDo3(){
-        self.view.bringSubview(toFront: sideContainer3)
+        self.view.bringSubviewToFront(sideContainer3)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("menuDo3"), object: nil)
         sideMenuConstraint.constant = self.view.bounds.size.width
     }
@@ -88,7 +88,7 @@ class artistView: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
        
-            self.view.sendSubview(toBack: sideContainer3)
+            self.view.sendSubviewToBack(sideContainer3)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("HidTheView3"), object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("ShowTheView3"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(hideTheView3),name:NSNotification.Name("HidTheView3"), object: nil)

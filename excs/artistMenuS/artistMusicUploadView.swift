@@ -59,13 +59,13 @@ class artistMusicUploadView: UIViewController, MPMediaPickerControllerDelegate {
         
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
         loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        loadingIndicator.style = UIActivityIndicatorView.Style.gray
         loadingIndicator.startAnimating();
         
         alert.view.addSubview(loadingIndicator)
         present(alert, animated: true, completion: nil)
         
-        if let imageData = UIImageJPEGRepresentation(self.albumArtImage.image!, 1){
+        if let imageData = self.albumArtImage.image!.jpegData(compressionQuality: 1){
             Alamofire.upload(multipartFormData: { (multipartFormData) in
                 for (key, value) in imagePara {
                     multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
@@ -158,9 +158,9 @@ class artistMusicUploadView: UIViewController, MPMediaPickerControllerDelegate {
     */
 
     func loginAlert(alertMessage : String){
-        let myAlert = UIAlertController(title: "Alert", message: alertMessage, preferredStyle: UIAlertControllerStyle.alert);
+        let myAlert = UIAlertController(title: "Alert", message: alertMessage, preferredStyle: UIAlertController.Style.alert);
         
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
         
         myAlert.addAction(okAction)
         
@@ -172,8 +172,11 @@ class artistMusicUploadView: UIViewController, MPMediaPickerControllerDelegate {
 
 
 extension artistMusicUploadView: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String:Any]){
-        if let image = info[UIImagePickerControllerEditedImage] as? UIImage{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey:Any]){
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
+        if let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as? UIImage{
             albumArtImage.contentMode = .scaleAspectFit
             print("imageimage")
             albumArtImage.layer.cornerRadius = 0.5 * albumArtImage.bounds.size.width
@@ -186,4 +189,14 @@ extension artistMusicUploadView: UIImagePickerControllerDelegate, UINavigationCo
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
 }

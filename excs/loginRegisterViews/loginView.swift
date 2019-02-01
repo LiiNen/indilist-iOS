@@ -50,7 +50,7 @@ class loginView: UIViewController, UITextFieldDelegate {
         
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
         loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        loadingIndicator.style = UIActivityIndicatorView.Style.gray
         loadingIndicator.startAnimating();
         
         alert.view.addSubview(loadingIndicator)
@@ -151,9 +151,9 @@ class loginView: UIViewController, UITextFieldDelegate {
     }
     
     func alertAc(mesAlert:String){
-        let myAlert = UIAlertController(title: "Alert", message: mesAlert, preferredStyle: UIAlertControllerStyle.alert);
+        let myAlert = UIAlertController(title: "Alert", message: mesAlert, preferredStyle: UIAlertController.Style.alert);
         
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
         
         myAlert.addAction(okAction)
         

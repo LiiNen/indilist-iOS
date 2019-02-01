@@ -48,8 +48,8 @@ class sideMenu201: UIViewController, UITextFieldDelegate {
                         }
                         almes = almes + "주소 변경은 이메일을 확인해주세요"
                     }
-                    let myAlert = UIAlertController(title: "\n다시 로그인해주세요", message: almes, preferredStyle: UIAlertControllerStyle.alert);
-                    let okAction = UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: nil)
+                    let myAlert = UIAlertController(title: "\n다시 로그인해주세요", message: almes, preferredStyle: UIAlertController.Style.alert);
+                    let okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
                     myAlert.addAction(okAction)
                     self.present(myAlert, animated: true, completion: nil)
                     self.logoutBtn(self)
@@ -60,7 +60,7 @@ class sideMenu201: UIViewController, UITextFieldDelegate {
             var imageHeaders = ["Content-type" : "multipart/form-data", "x-access-token" : UserDefaults.standard.string(forKey: "loginToken")!]
             let imagePara = ["" : ""]
             let uuurl = "https://indi-list.com/api/ChangeProfileImg"
-            if let imageData = UIImageJPEGRepresentation(self.userImage.image!, 1){
+            if let imageData = self.userImage.image!.jpegData(compressionQuality: 1){
                 
                 Alamofire.upload(multipartFormData: { (multipartFormData) in
                     for (key, value) in imagePara {
@@ -272,8 +272,8 @@ class sideMenu201: UIViewController, UITextFieldDelegate {
         }
     }
     func myAlertAction(alertMessage : String){
-        let myAlert = UIAlertController(title: "", message: alertMessage, preferredStyle: UIAlertControllerStyle.alert);
-        let okAction = UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: nil)
+        let myAlert = UIAlertController(title: "", message: alertMessage, preferredStyle: UIAlertController.Style.alert);
+        let okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
         myAlert.addAction(okAction)
         present(myAlert, animated: true, completion: nil)
     }
@@ -344,8 +344,11 @@ class sideMenu201: UIViewController, UITextFieldDelegate {
 }
 
 extension sideMenu201: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String:Any]){
-        if let image = info[UIImagePickerControllerEditedImage] as? UIImage{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey:Any]){
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
+        if let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as? UIImage{
             userImage.layer.masksToBounds = true
             userImage.contentMode = .scaleAspectFit
             print("imageimage")
@@ -360,4 +363,14 @@ extension sideMenu201: UIImagePickerControllerDelegate, UINavigationControllerDe
         dismiss(animated: true, completion: nil)
     }
     
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
 }

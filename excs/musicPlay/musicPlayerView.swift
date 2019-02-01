@@ -59,7 +59,7 @@ class musicPlayerView: UIViewController {
         let fulltime = CMTimeGetSeconds((player.currentItem?.duration)!)
         let timetoseek = playerSlider.value * Float(fulltime)
         let seconds : Int64 = Int64(timetoseek)
-        let targetTime:CMTime = CMTimeMake(seconds, 1)
+        let targetTime:CMTime = CMTimeMake(value: seconds, timescale: 1)
         player.seek(to: targetTime)
     }
     

@@ -212,15 +212,15 @@ class artistPageTab2: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func alertAc(mesAlert:String, completion: @escaping ()->()){
-        let myAlert = UIAlertController(title: "경고", message: mesAlert, preferredStyle: UIAlertControllerStyle.alert);
+        let myAlert = UIAlertController(title: "경고", message: mesAlert, preferredStyle: UIAlertController.Style.alert);
         
-        let okAction = UIAlertAction(title: "네", style: UIAlertActionStyle.default) {
+        let okAction = UIAlertAction(title: "네", style: UIAlertAction.Style.default) {
             UIAlertAction in
             UserDefaults.standard.setValue("true", forKey: "deleteAns")
             UserDefaults.standard.synchronize()
             NotificationCenter.default.post(name: NSNotification.Name("deleteChk"), object: nil)
         }
-        let cancelAction = UIAlertAction(title: "아니오", style: UIAlertActionStyle.cancel) {
+        let cancelAction = UIAlertAction(title: "아니오", style: UIAlertAction.Style.cancel) {
             UIAlertAction in
             UserDefaults.standard.setValue("false", forKey: "deleteAns")
             UserDefaults.standard.synchronize()

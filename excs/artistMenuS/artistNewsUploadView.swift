@@ -51,7 +51,7 @@ class artistNewsUploadView: UIViewController {
         let contentText = newsTextView.text!
         let para : Parameters = ["id": userId, "content": contentText]
     
-        if let imageData = UIImageJPEGRepresentation(self.newsImage.image!, 1){
+        if let imageData = self.newsImage.image!.jpegData(compressionQuality: 1){
             
             let imagePara = para
             
@@ -59,7 +59,7 @@ class artistNewsUploadView: UIViewController {
             
             let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
             loadingIndicator.hidesWhenStopped = true
-            loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+            loadingIndicator.style = UIActivityIndicatorView.Style.gray
             loadingIndicator.startAnimating();
             
             alert.view.addSubview(loadingIndicator)
@@ -121,9 +121,9 @@ class artistNewsUploadView: UIViewController {
         
     }
     func newsAlert(alertMessage : String){
-        let myAlert = UIAlertController(title: "Alert", message: alertMessage, preferredStyle: UIAlertControllerStyle.alert);
+        let myAlert = UIAlertController(title: "Alert", message: alertMessage, preferredStyle: UIAlertController.Style.alert);
         
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
         
         myAlert.addAction(okAction)
         
@@ -168,8 +168,11 @@ class artistNewsUploadView: UIViewController {
 
 
 extension artistNewsUploadView: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String:Any]){
-        if let image = info[UIImagePickerControllerEditedImage] as? UIImage{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey:Any]){
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
+        if let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as? UIImage{
             newsImage.contentMode = .scaleAspectFit
             print("imageimage")
             newsImage.layer.cornerRadius = 0.5 * newsImage.bounds.size.width
@@ -182,4 +185,14 @@ extension artistNewsUploadView: UIImagePickerControllerDelegate, UINavigationCon
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
 }

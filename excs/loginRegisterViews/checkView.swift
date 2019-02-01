@@ -279,7 +279,7 @@ class checkView: UIViewController, UITextFieldDelegate {
             print("all checked")
             
             let imageHeaders = ["Content-type" : "multipart/form-data"]
-            if let imageData = UIImageJPEGRepresentation(self.userImage.image!, 1){
+            if let imageData = self.userImage.image!.jpegData(compressionQuality: 1){
                 
                 let imagePara = para
                 
@@ -288,7 +288,7 @@ class checkView: UIViewController, UITextFieldDelegate {
                 
                 let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
                 loadingIndicator.hidesWhenStopped = true
-                loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+                loadingIndicator.style = UIActivityIndicatorView.Style.gray
                 loadingIndicator.startAnimating();
                 
                 alert.view.addSubview(loadingIndicator)
@@ -333,9 +333,9 @@ class checkView: UIViewController, UITextFieldDelegate {
     
     //alert
     func loginAlert(alertMessage : String){
-        let myAlert = UIAlertController(title: "Alert", message: alertMessage, preferredStyle: UIAlertControllerStyle.alert);
+        let myAlert = UIAlertController(title: "Alert", message: alertMessage, preferredStyle: UIAlertController.Style.alert);
         
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
         
         myAlert.addAction(okAction)
         
@@ -364,8 +364,11 @@ class checkView: UIViewController, UITextFieldDelegate {
 
 //image extension
 extension checkView: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String:Any]){
-        if let image = info[UIImagePickerControllerEditedImage] as? UIImage{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey:Any]){
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
+        if let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as? UIImage{
             userImage.layer.masksToBounds = true
             userImage.contentMode = .scaleAspectFit
             print("imageimage")
@@ -379,4 +382,14 @@ extension checkView: UIImagePickerControllerDelegate, UINavigationControllerDele
         dismiss(animated: true, completion: nil)
     }
     
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
 }

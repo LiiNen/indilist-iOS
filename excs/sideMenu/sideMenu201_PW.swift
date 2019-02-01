@@ -60,9 +60,9 @@ class sideMenu201_PW: UIViewController, UITextFieldDelegate {
             Alamofire.request(url, method: .post, parameters: para, encoding: JSONEncoding.default, headers: headers).responseString { response in
                 let ret = response.result.value!
                 if(ret == "true"){
-                    let myAlert2 = UIAlertController(title: "완료", message: "비밀번호 변경에 성공하였습니다", preferredStyle: UIAlertControllerStyle.alert);
+                    let myAlert2 = UIAlertController(title: "완료", message: "비밀번호 변경에 성공하였습니다", preferredStyle: UIAlertController.Style.alert);
                     
-                    let okAction2 = UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: nil)
+                    let okAction2 = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
                     
                     myAlert2.addAction(okAction2)
                     
@@ -78,9 +78,9 @@ class sideMenu201_PW: UIViewController, UITextFieldDelegate {
         }
     }
     func alertAc(mesAlert:String){
-        let myAlert = UIAlertController(title: "오류", message: mesAlert, preferredStyle: UIAlertControllerStyle.alert);
+        let myAlert = UIAlertController(title: "오류", message: mesAlert, preferredStyle: UIAlertController.Style.alert);
         
-        let okAction = UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: nil)
+        let okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
         
         myAlert.addAction(okAction)
         

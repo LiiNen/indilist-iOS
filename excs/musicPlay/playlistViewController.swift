@@ -105,7 +105,7 @@ class playlistViewController: UIViewController, UITableViewDelegate, UITableView
         let id = UserDefaults.standard.string(forKey: "loginId")!
         UserDefaults.standard.setValue(theList, forKey: "ownplaylist" + id)
         playlistTable.reloadData()
-        playlistTable.selectRow(at: IndexPath.init(row: selectedRow-1, section: 0), animated: true, scrollPosition: UITableViewScrollPosition.middle)
+        playlistTable.selectRow(at: IndexPath.init(row: selectedRow-1, section: 0), animated: true, scrollPosition: UITableView.ScrollPosition.middle)
         selectedRow = selectedRow - 1
         if(selectedRow == 0){
             listUpBtn.isEnabled = false
@@ -120,7 +120,7 @@ class playlistViewController: UIViewController, UITableViewDelegate, UITableView
         let id = UserDefaults.standard.string(forKey: "loginId")!
         UserDefaults.standard.setValue(theList, forKey: "ownplaylist" + id)
         playlistTable.reloadData()
-        playlistTable.selectRow(at: IndexPath.init(row: selectedRow+1, section: 0), animated: true, scrollPosition: UITableViewScrollPosition.middle)
+        playlistTable.selectRow(at: IndexPath.init(row: selectedRow+1, section: 0), animated: true, scrollPosition: UITableView.ScrollPosition.middle)
         selectedRow = selectedRow + 1
         if(selectedRow == theList.count - 1){
             listDownBtn.isEnabled = false

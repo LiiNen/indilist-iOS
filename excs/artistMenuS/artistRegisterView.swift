@@ -116,9 +116,9 @@ class artistRegisterView: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     func alertAc(mesAlert:String, titleName:String){
-        let myAlert = UIAlertController(title: titleName, message: mesAlert, preferredStyle: UIAlertControllerStyle.alert);
+        let myAlert = UIAlertController(title: titleName, message: mesAlert, preferredStyle: UIAlertController.Style.alert);
         
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
         
         myAlert.addAction(okAction)
         
