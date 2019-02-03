@@ -60,23 +60,35 @@
                                             <rect key="frame" x="0.0" y="0.0" width="316" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9C7-yU-RHJ">
-                                                    <rect key="frame" x="169" y="21" width="102" height="37"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9C7-yU-RHJ">
+                                                    <rect key="frame" x="165.5" y="21.5" width="102" height="37"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="102" id="f2J-kG-Ey4"/>
+                                                        <constraint firstAttribute="height" constant="37" id="qHo-nN-0SG"/>
+                                                    </constraints>
                                                     <state key="normal" title="Button" image="myPage"/>
                                                     <connections>
                                                         <action selector="myPageBtn:" destination="XpV-AC-y9W" eventType="touchUpInside" id="P82-lZ-JTE"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SS6-AC-6yp">
-                                                    <rect key="frame" x="31" y="21" width="102" height="37"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SS6-AC-6yp">
+                                                    <rect key="frame" x="48.5" y="21.5" width="102" height="37"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="37" id="U92-fk-0jQ"/>
+                                                        <constraint firstAttribute="width" constant="102" id="yGC-fr-dN0"/>
+                                                    </constraints>
                                                     <state key="normal" title="Button" image="artistPage"/>
                                                     <connections>
                                                         <action selector="artistMenuBtn:" destination="XpV-AC-y9W" eventType="touchUpInside" id="cgS-nb-uY4"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="SS6-AC-6yp" firstAttribute="leading" secondItem="tff-uu-7bg" secondAttribute="leading" constant="48.600000000000001" id="aVT-Oz-Ole"/>
+                                                <constraint firstItem="9C7-yU-RHJ" firstAttribute="centerY" secondItem="tff-uu-7bg" secondAttribute="centerY" id="ew4-Ag-Txf"/>
+                                                <constraint firstAttribute="trailing" secondItem="9C7-yU-RHJ" secondAttribute="trailing" constant="48.600000000000001" id="iFx-YU-YtY"/>
+                                                <constraint firstItem="SS6-AC-6yp" firstAttribute="centerY" secondItem="tff-uu-7bg" secondAttribute="centerY" id="rru-4s-99w"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="70" id="hH4-7W-pT9">
@@ -3910,7 +3922,7 @@ THE SOFTWARE.</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rb-qj-pf8">
-                                                    <rect key="frame" x="227.5" y="12" width="100" height="26"/>
+                                                    <rect key="frame" x="227.5" y="9" width="100" height="31.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="2Ce-w6-VFJ"/>
                                                     </constraints>
@@ -3919,7 +3931,7 @@ THE SOFTWARE.</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WtM-dp-6Xi">
-                                                    <rect key="frame" x="344.5" y="19.5" width="11" height="11"/>
+                                                    <rect key="frame" x="344.5" y="19" width="11" height="11.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="11.1" id="77q-dA-LFY"/>
                                                         <constraint firstAttribute="height" constant="11.1" id="bUI-Au-iwb"/>
@@ -3930,7 +3942,7 @@ THE SOFTWARE.</string>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQb-Z5-Igw">
-                                                    <rect key="frame" x="316.5" y="12.5" width="24.5" height="25"/>
+                                                    <rect key="frame" x="316.5" y="12.5" width="24.5" height="24.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="24.800000000000001" id="QoM-VJ-Z8X"/>
                                                         <constraint firstAttribute="height" constant="24.800000000000001" id="Ung-9P-KjZ"/>
@@ -5998,7 +6010,7 @@ THE SOFTWARE.</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8IC-xF-hOc">
-                                                    <rect key="frame" x="234.5" y="12" width="100" height="26"/>
+                                                    <rect key="frame" x="234.5" y="9" width="100" height="31.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="ggx-91-5gR"/>
                                                     </constraints>
@@ -6007,7 +6019,7 @@ THE SOFTWARE.</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sn6-BQ-LlA">
-                                                    <rect key="frame" x="344.5" y="19.5" width="11" height="11"/>
+                                                    <rect key="frame" x="344.5" y="19" width="11" height="11.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="11.1" id="OQO-gN-Iak"/>
                                                         <constraint firstAttribute="width" constant="11.1" id="wNE-fr-NAF"/>
@@ -6018,7 +6030,7 @@ THE SOFTWARE.</string>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIL-F5-7hR">
-                                                    <rect key="frame" x="316.5" y="12.5" width="24.5" height="25"/>
+                                                    <rect key="frame" x="316.5" y="12.5" width="24.5" height="24.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24.800000000000001" id="6M8-SB-nvb"/>
                                                         <constraint firstAttribute="width" constant="24.800000000000001" id="8mj-yD-iKq"/>
@@ -6122,7 +6134,7 @@ THE SOFTWARE.</string>
                                 <rect key="frame" x="0.0" y="44" width="376" height="416"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="mycell9" id="y9n-5U-NZV" customClass="mycell9cell" customModule="excs" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="mycell9" id="y9n-5U-NZV" customClass="mycell9cell" customModule="excs" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1" width="376" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="y9n-5U-NZV" id="7LB-uE-bUK">
@@ -6282,7 +6294,7 @@ THE SOFTWARE.</string>
         <segue reference="Dn3-lJ-4FW"/>
         <segue reference="IkX-3u-ngY"/>
         <segue reference="f6Y-T2-Qhk"/>
-        <segue reference="7j3-ap-R8D"/>
+        <segue reference="mPt-1R-65e"/>
         <segue reference="Kbc-24-D3w"/>
         <segue reference="gj0-2L-Odh"/>
         <segue reference="krT-3R-Rmy"/>
