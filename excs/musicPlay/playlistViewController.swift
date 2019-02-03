@@ -32,11 +32,10 @@ class playlistViewController: UIViewController, UITableViewDelegate, UITableView
         cellT.musicTitle.text = cellT.title
         cellT.musicArtist.text = cellT.artist
         cellT.albumArt.image = UIImage(named: "defaultMusicImage")
-        Alamofire.request(cellT.imageurl).responseImage { response in
-            if let image = response.result.value{
-                cellT.albumArt.image = image
-            }
-        }
+        
+        cellT.albumArt.af_setImage(withURL: URL(string: cellT.imageurl
+        )!)
+        
         if(nowedit == 0){
             cellT.deleteBtn.isEnabled = false
             cellT.deleteBtn.isHidden = true
@@ -137,16 +136,6 @@ class playlistViewController: UIViewController, UITableViewDelegate, UITableView
         selectedRow = -1
         allBtnDis()
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     var selectedRow = -1
     
