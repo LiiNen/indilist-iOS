@@ -181,12 +181,8 @@ class musicPlayerContainerView: UIViewController {
         musicArtist.text = (temp[self.indexNum]["artist"] as! String)
         musicArtist.adjustsFontSizeToFitWidth = true
         
-        Alamofire.request(albumArtURL!).responseImage{ response in
-            if let imagel = response.result.value {
-                self.albumArtBtn.setImage(imagel, for: .normal)
-            }
-        }
-        
+        albumArtBtn.af_setImage(for: .normal, url: albumArtURL!)
+         
         headers["x-access-token"] = UserDefaults.standard.string(forKey: "loginToken")
         Alamofire.request(url, method: .post, parameters: para, encoding: JSONEncoding.default, headers : self.headers).responseJSON { response in
             
