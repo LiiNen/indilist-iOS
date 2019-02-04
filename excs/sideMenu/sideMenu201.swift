@@ -285,13 +285,9 @@ class sideMenu201: UIViewController, UITextFieldDelegate {
     
     func getImage(){
         let imageURL = UserDefaults.standard.string(forKey: "loginPhoto")!
-        Alamofire.request(imageURL).responseImage { response in
-            if let imagel = response.result.value {
-                self.userImage.image = imagel
-                self.userImage.layer.masksToBounds = true
-                self.userImage.layer.cornerRadius = 0.5 * (self.userImage.bounds.size.width)
-            }
-        }
+        self.userImage.af_setImage(withURL: URL(string: imageURL)!)
+        self.userImage.layer.masksToBounds = true
+        self.userImage.layer.cornerRadius = 0.5 * (self.userImage.bounds.size.width)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

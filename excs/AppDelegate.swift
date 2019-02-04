@@ -30,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.makeKeyAndVisible()
             
         }
+        UserDefaults.standard.removeObject(forKey: "nowPlaying")
+        UserDefaults.standard.synchronize()
     
         return true
     }
