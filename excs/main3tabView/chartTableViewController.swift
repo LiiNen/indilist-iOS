@@ -157,6 +157,7 @@ class chartTableViewController: UIViewController, UITableViewDelegate, UITableVi
                 }
             }
         }
+        self.chartTableView2.contentOffset = CGPoint(x: 0, y: 0 - self.chartTableView2.contentInset.top)
     }
     
     func showToast(message : String) {
