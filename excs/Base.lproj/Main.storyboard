@@ -1638,7 +1638,7 @@ THE SOFTWARE.</string>
                                 <color key="backgroundColor" red="0.61568627450980395" green="0.55294117647058827" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27.5" id="dFU-aD-Zkk"/>
-                                    <constraint firstAttribute="width" constant="76" id="zYI-I5-tU1"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="76" id="zYI-I5-tU1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="다음">
@@ -1648,13 +1648,6 @@ THE SOFTWARE.</string>
                                     <segue destination="h74-hI-YGP" kind="show" id="kIj-L7-gfz"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="이용약관" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5o-zM-JMs">
-                                <rect key="frame" x="0.0" y="103" width="375" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <webView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yzj-sa-ek4">
                                 <rect key="frame" x="12" y="105" width="351" height="389"/>
                                 <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1662,7 +1655,7 @@ THE SOFTWARE.</string>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상기 내용을 숙지하고 위 내용에 동의합니다" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5i-kk-LOx">
                                 <rect key="frame" x="95" y="517" width="185.5" height="12"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="185.5" id="Qoq-l0-dFF"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="185.5" id="Qoq-l0-dFF"/>
                                     <constraint firstAttribute="height" constant="12" id="f6l-L8-rgB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="10.5"/>
@@ -1911,17 +1904,17 @@ THE SOFTWARE.</string>
             <objects>
                 <viewController id="7pk-Ls-qRm" customClass="artistNewsUploadView" customModule="excs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="567-dx-Xya">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="614"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="E3m-Y3-mu4">
-                                <rect key="frame" x="20" y="128" width="335" height="232.5"/>
+                                <rect key="frame" x="20" y="128" width="335" height="285.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5R7-Ii-pRC">
-                                <rect key="frame" x="20" y="499.5" width="335" height="43"/>
+                                <rect key="frame" x="20" y="552.5" width="335" height="43"/>
                                 <color key="backgroundColor" red="0.72156862745098038" green="0.63921568627450975" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="p3M-yo-UKR"/>
@@ -1934,7 +1927,7 @@ THE SOFTWARE.</string>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XFb-8g-RU8">
-                                <rect key="frame" x="20" y="385" width="335" height="70.5"/>
+                                <rect key="frame" x="20" y="438" width="335" height="70.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newsUploadImage" translatesAutoresizingMaskIntoConstraints="NO" id="DW4-T0-0cS">
                                         <rect key="frame" x="7.5" y="5.5" width="60" height="60"/>
@@ -1968,7 +1961,7 @@ THE SOFTWARE.</string>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="작성 후에는 수정이 불가합니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecm-DS-olX">
-                                <rect key="frame" x="0.0" y="470.5" width="375" height="15"/>
+                                <rect key="frame" x="0.0" y="523.5" width="375" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12.5"/>
                                 <color key="textColor" red="0.37647058823529411" green="0.36078431372549019" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -2012,7 +2005,7 @@ THE SOFTWARE.</string>
             <objects>
                 <viewController id="VBe-Pn-bad" customClass="artistMusicUploadView" customModule="excs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1KF-Gc-l5g">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="614"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultMusicImage" translatesAutoresizingMaskIntoConstraints="NO" id="WP8-cb-vbs">
@@ -2159,7 +2152,7 @@ THE SOFTWARE.</string>
             <objects>
                 <viewController id="Rkb-FK-UIr" customClass="artistRegisterView" customModule="excs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DUo-mi-kC0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="614"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohb-lI-ljA">
@@ -2298,13 +2291,13 @@ THE SOFTWARE.</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qUD-U2-FuH">
-                                <rect key="frame" x="20" y="40" width="335" height="597"/>
+                                <rect key="frame" x="20" y="84" width="335" height="500"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c00-c4-ShH">
-                                        <rect key="frame" x="0.0" y="40" width="335" height="557"/>
+                                        <rect key="frame" x="0.0" y="40" width="335" height="460"/>
                                     </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbq-fX-qYk">
-                                        <rect key="frame" x="132.5" y="527" width="70" height="40"/>
+                                        <rect key="frame" x="132.5" y="430" width="70" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="pHV-UG-aw9"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="yiS-0H-COf"/>
@@ -2384,7 +2377,7 @@ THE SOFTWARE.</string>
             <objects>
                 <viewController id="OSu-V9-RxG" customClass="artistPageView" customModule="excs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XqG-jA-IoT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="614"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4U2-OS-8aF">
@@ -2535,7 +2528,7 @@ THE SOFTWARE.</string>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wci-gf-mqB">
-                                <rect key="frame" x="0.0" y="386" width="375" height="228"/>
+                                <rect key="frame" x="0.0" y="386" width="375" height="281"/>
                                 <connections>
                                     <segue destination="S0f-Oc-84u" kind="embed" id="V4p-sx-9ru"/>
                                 </connections>
@@ -3857,7 +3850,7 @@ THE SOFTWARE.</string>
             <objects>
                 <viewController id="INC-62-g7Z" customClass="artistPageTab1" customModule="excs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yND-b9-OWU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="228"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="281"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="spC-My-bFI"/>
@@ -3893,11 +3886,11 @@ THE SOFTWARE.</string>
             <objects>
                 <viewController id="Trr-eo-CBl" customClass="artistPageTab2" customModule="excs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R21-w8-87b">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="228"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="281"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PWC-qb-PUb">
-                                <rect key="frame" x="0.0" y="49" width="375" height="179"/>
+                                <rect key="frame" x="0.0" y="49" width="375" height="232"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="musicTableCell" rowHeight="50" id="wyG-fW-NkH" customClass="musicTableViewCell" customModule="excs" customModuleProvider="target">
@@ -4005,7 +3998,7 @@ THE SOFTWARE.</string>
             <objects>
                 <viewController id="vmO-Kz-6f1" customClass="artistPageTab3" customModule="excs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yYo-gA-8Jx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="228"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="281"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="gmW-bO-vfP"/>
@@ -4021,7 +4014,7 @@ THE SOFTWARE.</string>
             <objects>
                 <viewController id="wtz-Qc-4Em" customClass="musicInfoView" customModule="excs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="psO-Jw-B28">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="614"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="노래노래 댓글확인하는 페이지" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKL-1Q-VSt">
