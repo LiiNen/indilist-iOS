@@ -17,6 +17,7 @@ class oneMusicCell: UITableViewCell {
     @IBOutlet weak var commentLikes : UILabel!
     var commentLike: Int!
 
+    @IBOutlet weak var deleteBtn: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,7 +25,6 @@ class oneMusicCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
 

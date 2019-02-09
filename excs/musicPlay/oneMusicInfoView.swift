@@ -48,7 +48,26 @@ class oneMusicInfoView: UIViewController, UITableViewDelegate, UITableViewDataSo
                 cell.commentImage.layer.cornerRadius = cell.commentImage.bounds.size.width / 2
             }
         }
+        if(row.nickname != UserDefaults.standard.string(forKey: "loginName")){
+            cell.deleteBtn.isHidden = true
+            cell.deleteBtn.isEnabled = false
+        }
+        else{
+            cell.deleteBtn.addTarget(self, action: #selector(deleteAction), for: .touchUpInside)
+        }
         return cell
+    }
+    @objc func deleteAction(sender: UIButton!){
+        print("wow")
+        let likepara1 : Parameters = ["commentid" : ""]
+        var likeheader1 = ["x-access-token" : ""]
+        likeheader1["x-access-token"] = UserDefaults.standard.string(forKey: "loginToken")!
+        Alamofire.request("https://indi-list.com/api/DeleteMusicComment", method: .post, parameters: likepara1, encoding: JSONEncoding.default, headers: likeheader1).responseString { response in
+            print(response)
+            if(response.result.value == "true"){
+                self.hnialert(alertMessage: "댓글이 정상적으로 삭제되었습니다.")
+            }
+        }
     }
     
 //    let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
