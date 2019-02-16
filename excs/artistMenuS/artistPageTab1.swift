@@ -8,12 +8,14 @@
 
 import UIKit
 import SwiftyJSON
+import Alamofire
+import AlamofireImage
 
 class artistPageTab1: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
 
@@ -24,6 +26,16 @@ class artistPageTab1: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
+    }
+    
+    func loadNews(){
+        let url = "https://indi-list.com/GetPersonalArtistNewsbyNum"
+        let para : Parameters = ["num" : 0]
+        let headers = ["Content-Type" : "application/json"]
+        Alamofire.request(url, method: .post, parameters: para, encoding: JSONEncoding.default, headers : headers).responseJSON { response in
+            
+            print(response)
+        }
     }
     
     
