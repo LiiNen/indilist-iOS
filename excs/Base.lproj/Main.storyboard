@@ -5981,6 +5981,7 @@ THE SOFTWARE.</string>
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.63137254899999995" green="0.5490196078431373" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="U8x-Z1-WZJ" kind="relationship" relationship="viewControllers" id="dlL-SZ-iAG"/>
@@ -6303,6 +6304,7 @@ THE SOFTWARE.</string>
         <image name="starimage" width="40" height="38"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="2sP-dh-nSQ"/>
         <segue reference="VKa-Xb-eRA"/>
         <segue reference="4HY-y4-odK"/>
         <segue reference="maz-Um-ybS"/>

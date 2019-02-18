@@ -15,8 +15,9 @@ class artistPageTab1: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        //NotificationCenter.default.removeObserver(self, name: NSNotification.Name("loadArtistNews"), object: nil)
+        print("whydoesnoe")
+        NotificationCenter.default.addObserver(self, selector: #selector(loadNews), name: NSNotification.Name("loadArtistNews"), object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,18 +25,15 @@ class artistPageTab1: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-    }
-    
-    func loadNews(){
+    @objc func loadNews(){
+        print("success load action")
         let url = "https://indi-list.com/GetPersonalArtistNewsbyNum"
         let para : Parameters = ["num" : 0]
         let headers = ["Content-Type" : "application/json"]
-        Alamofire.request(url, method: .post, parameters: para, encoding: JSONEncoding.default, headers : headers).responseJSON { response in
-            
-            print(response)
-        }
+//        Alamofire.request(url, method: .post, parameters: para, encoding: JSONEncoding.default, headers : headers).responseJSON { response in
+//
+//            print(response)
+//        }
     }
     
     

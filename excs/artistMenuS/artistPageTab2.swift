@@ -29,7 +29,6 @@ class artistPageTab2: UIViewController, UITableViewDelegate, UITableViewDataSour
     var musicItemList = [musicItem]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(musicItemList.count, "first")
         return musicItemList.count
     }
     
@@ -48,7 +47,6 @@ class artistPageTab2: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.titleName.text = row.title + "  /  " + row.genre
         
         cell.info = ["artist" : row.artist, "title" : row.title, "music-id" : row.musicid, "album-img" : row.imageurl, "like" : row.like, "gerne" : row.genre, "artistIMG" : row.artistimage, "upload-time" : row.time] as [String : Any]
-        print(">>why doesn;t work?", cell.info)
         cell.infoBtnBtn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         
         cell.musicid = row.musicid
@@ -83,7 +81,7 @@ class artistPageTab2: UIViewController, UITableViewDelegate, UITableViewDataSour
                 print("reload")
                 self.musicTable.reloadData()
             })
-            }
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -103,8 +101,6 @@ class artistPageTab2: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         Alamofire.request(url, method: .post, parameters: para, encoding: JSONEncoding.default, headers : headers).responseJSON { response in
             
-            print(response)
-            
             if let json = response.result.value {
                 let arrayTemp : NSArray  = json as! NSArray
                 for i in 0..<arrayTemp.count{
@@ -120,8 +116,6 @@ class artistPageTab2: UIViewController, UITableViewDelegate, UITableViewDataSour
                     ))
                     
                 }
-                print(self.musicItemList)
-                print(self.musicItemList.count)
                 
                 self.musicTable.reloadData()
             }
@@ -149,15 +143,10 @@ class artistPageTab2: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         Alamofire.request(url, method: .post, parameters: para, encoding: JSONEncoding.default, headers : headers).responseJSON { response in
             
-            print(response)
-            
             if let json = response.result.value {
-                
-                
                 let swiftyJsonVar : JSON
                 if((response.result.value) != nil) {
                     swiftyJsonVar = JSON(response.result.value!)
-                    print("origin : ", swiftyJsonVar)
                     if(swiftyJsonVar["err"].exists()){
                         if(swiftyJsonVar["result"].string! == "update"){
                             print(swiftyJsonVar["token"].string!)

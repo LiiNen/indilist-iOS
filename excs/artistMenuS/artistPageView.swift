@@ -189,6 +189,7 @@ class artistPageView: UIViewController {
         let url2 = "https://www.indi-list.com/GetArtistInfobyNum"
         let para2 : Parameters = ["num" : num]
         let headers2 = ["Content-Type" : "application/json"]
+        NotificationCenter.default.post(name: NSNotification.Name("loadArtistNews"), object: nil)
         Alamofire.request(url2, method:.post, parameters: para2, encoding: JSONEncoding.default, headers: headers2).responseJSON { response in
             let swiftyJsonVar : JSON
             print(response)
