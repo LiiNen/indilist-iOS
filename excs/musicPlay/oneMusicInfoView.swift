@@ -97,7 +97,12 @@ class oneMusicInfoView: UIViewController, UITableViewDelegate, UITableViewDataSo
         musicArtist.text = info["artist"] as? String
         musicArtist.adjustsFontSizeToFitWidth = true
         musicGenre.text = info["gerne"] as? String
-        musicTime.text = info["upload-time"] as? String
+        let timeString = info["upload-time"] as! String
+        let splited = timeString.components(separatedBy: "-")
+        let splited2array = Array(splited[2])
+        let daytext : String = "\(splited2array[0])\(splited2array[1])"
+        musicTime.text = splited[0] + "." + splited[1] + "." + daytext
+        //musicTime.text = info["upload-time"] as? String
         musicLike.text = String((info["like"] as? Int)!) + "개"
         Alamofire.request((info["album-img"] as? String)!).responseImage { response in
             if let image = response.result.value{
