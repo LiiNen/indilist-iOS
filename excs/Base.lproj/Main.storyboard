@@ -3043,6 +3043,9 @@ THE SOFTWARE.</string>
                                     <constraint firstAttribute="height" constant="260" id="nwv-cd-0Pb"/>
                                 </constraints>
                                 <state key="normal" image="imageNew"/>
+                                <connections>
+                                    <action selector="albumArtBtn:" destination="TGS-v1-PZ5" eventType="touchUpInside" id="ZPE-mQ-1ak"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUX-R9-mJA">
                                 <rect key="frame" x="27" y="54" width="6.5" height="17"/>
@@ -6304,8 +6307,7 @@ THE SOFTWARE.</string>
         <image name="starimage" width="40" height="38"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2sP-dh-nSQ"/>
-        <segue reference="VKa-Xb-eRA"/>
+        <segue reference="K08-YY-JQt"/>
         <segue reference="4HY-y4-odK"/>
         <segue reference="maz-Um-ybS"/>
         <segue reference="djA-sH-3OF"/>

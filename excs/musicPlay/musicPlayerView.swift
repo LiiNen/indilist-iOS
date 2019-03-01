@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import AlamofireImage
 import AVFoundation
+import SwiftyJSON
 
 class musicPlayerView: UIViewController {
 
@@ -96,6 +97,8 @@ class musicPlayerView: UIViewController {
     }
     
     @IBOutlet weak var likeBtn: UIButton!
+    
+    
     @objc func loadNowPlaying(){
         nowp = UserDefaults.standard.value(forKey: "nowPlaying")! as! [String : Any]
         let url = nowp["album-img"] as! String
@@ -242,4 +245,74 @@ class musicPlayerView: UIViewController {
         myview.info = twp
         self.present(myview, animated: true, completion: nil)
     }
+    
+    @IBAction func albumArtBtn(_ sender: Any) {
+        lyricsBtnPush()
+    }
+    
+    func lyricsBtnPush(){
+        let tempStringnowp = self.nowp["music-id"] as! String
+        print(tempStringnowp)
+        
+        Alamofire.request("https://indi-list.com/api/GetLyrics", method: .post, parameters: ["mid" : tempStringnowp], encoding: JSONEncoding.default, headers : ["x-access-token" : UserDefaults.standard.string(forKey: "loginToken")!]).responseJSON { response in
+            
+            let swiftyJsonVar : JSON
+            
+            if((response.result.value) != nil) {
+                swiftyJsonVar = JSON(response.result.value!)
+                print("origin : ", swiftyJsonVar)
+                if(swiftyJsonVar["err"].exists()){
+                    if(swiftyJsonVar["result"].string! == "update"){
+                        print(swiftyJsonVar["token"].string!)
+                        print("토큰이 교체됩니다. 이하의 토큰으로 진행해주세요.")
+                        let tok = swiftyJsonVar["token"].string!
+                        UserDefaults.standard.setValue(tok, forKey: "loginToken")
+                        UserDefaults.standard.synchronize()
+                        self.lyricsBtnPush()
+                    }
+                    else{
+                        self.showToast(message: "다시 로그인해주세요")
+                        self.removeOb()
+                        NotificationCenter.default.post(name: NSNotification.Name("logOutAction"), object: nil)
+                        
+                        return;
+                    }
+                }
+                else{
+                    print(swiftyJsonVar)
+                    print("spspspspsps")
+                }
+            }
+        }
+    }
+    
+    func showToast(message : String) {
+        
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - self.view.frame.size.width*0.3, y: self.view.frame.size.height-100, width: self.view.frame.size.width*0.6, height: 35))
+        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        toastLabel.textColor = UIColor.white
+        toastLabel.textAlignment = .center;
+        toastLabel.font = UIFont(name: "Montserrat-Light", size: 10.0)
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10;
+        toastLabel.clipsToBounds  =  true
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 2.0, delay: 0.1, options: .curveEaseOut, animations: {
+            toastLabel.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
+    }
+    
+    @objc func removeOb(){
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("musicPlay"), object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("musicNext"), object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("musicBefore"), object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("addingMusic"), object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("AAA"), object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("logoutAV"), object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("KKK"), object: nil)
+    }
+            
 }
