@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CE0534F821B3CC8F00688066 /* oneMusicInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0534F721B3CC8F00688066 /* oneMusicInfoView.swift */; };
 		CE0534FA21B3CCA900688066 /* oneMusicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0534F921B3CCA900688066 /* oneMusicCell.swift */; };
+		CE0929A9222AC2A900E025CB /* lyricsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0929A8222AC2A900E025CB /* lyricsViewController.swift */; };
 		CE0CB3E52147AD7B004800AD /* chartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CB3E42147AD7B004800AD /* chartView.swift */; };
 		CE202D052196827600804DE5 /* qnaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE202D042196827600804DE5 /* qnaView.swift */; };
 		CE202D072196858200804DE5 /* musicPlayerContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE202D062196858200804DE5 /* musicPlayerContainerView.swift */; };
@@ -79,6 +80,7 @@
 		689DE0BD5B1205D3B57A6F19 /* Pods-excs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-excs.release.xcconfig"; path = "Pods/Target Support Files/Pods-excs/Pods-excs.release.xcconfig"; sourceTree = "<group>"; };
 		CE0534F721B3CC8F00688066 /* oneMusicInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = oneMusicInfoView.swift; sourceTree = "<group>"; };
 		CE0534F921B3CCA900688066 /* oneMusicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = oneMusicCell.swift; sourceTree = "<group>"; };
+		CE0929A8222AC2A900E025CB /* lyricsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lyricsViewController.swift; sourceTree = "<group>"; };
 		CE0CB3E42147AD7B004800AD /* chartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chartView.swift; sourceTree = "<group>"; };
 		CE202D042196827600804DE5 /* qnaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = qnaView.swift; sourceTree = "<group>"; };
 		CE202D062196858200804DE5 /* musicPlayerContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = musicPlayerContainerView.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 				CE81FA4E21B1DA0E00875B66 /* playlistCell.swift */,
 				CE0534F721B3CC8F00688066 /* oneMusicInfoView.swift */,
 				CE0534F921B3CCA900688066 /* oneMusicCell.swift */,
+				CE0929A8222AC2A900E025CB /* lyricsViewController.swift */,
 			);
 			path = musicPlay;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				CE808C502150929A002BF4D2 /* sideMenu.swift in Sources */,
 				CE81FA4B21B18B5F00875B66 /* musicPlayer2ContainerView.swift in Sources */,
 				CEF11D6A216618E10004CCBE /* appInfo.swift in Sources */,
+				CE0929A9222AC2A900E025CB /* lyricsViewController.swift in Sources */,
 				CE808C4F2150929A002BF4D2 /* artistView.swift in Sources */,
 				CE0CB3E52147AD7B004800AD /* chartView.swift in Sources */,
 				CE69153121ACF5B600AA7B73 /* artistPageTab3.swift in Sources */,

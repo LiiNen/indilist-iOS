@@ -94,6 +94,8 @@ class musicPlayerView: UIViewController {
             _ = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateSlider), userInfo: nil, repeats: true)
         }
         
+        NotificationCenter.default.addObserver(self, selector: #selector(lyricsOff), name: NSNotification.Name("lyricsoffAction"), object: nil)
+        self.lyricsContainer.isHidden = true
     }
     
     @IBOutlet weak var likeBtn: UIButton!
@@ -250,6 +252,17 @@ class musicPlayerView: UIViewController {
         lyricsBtnPush()
     }
     
+    
+    
+    
+    @IBOutlet weak var lyricsContainer: UIView!
+    @objc func lyricsOff(){
+        lyricsContainer.isHidden = true
+    }
+    
+    
+    
+    
     func lyricsBtnPush(){
         let tempStringnowp = self.nowp["music-id"] as! String
         print(tempStringnowp)
@@ -281,6 +294,7 @@ class musicPlayerView: UIViewController {
                 else{
                     print(swiftyJsonVar)
                     print("spspspspsps")
+                    self.lyricsContainer.isHidden = false
                 }
             }
         }

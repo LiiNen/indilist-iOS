@@ -3175,12 +3175,19 @@ THE SOFTWARE.</string>
                                     <action selector="backBtn:" destination="TGS-v1-PZ5" eventType="touchUpInside" id="DJl-Rm-1Lh"/>
                                 </connections>
                             </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fOd-AJ-y4M">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <connections>
+                                    <segue destination="4VK-uQ-CoY" kind="embed" id="m7H-zI-ENj"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fUu-Rf-cLd" firstAttribute="centerY" secondItem="Yc6-E9-uSj" secondAttribute="centerY" id="04n-30-JWE"/>
                             <constraint firstItem="RhU-9T-KBH" firstAttribute="top" secondItem="jgs-cm-2D7" secondAttribute="bottom" constant="20" id="1Fn-vS-Dp5"/>
                             <constraint firstItem="GP7-6k-Yfk" firstAttribute="leading" secondItem="7l9-ut-Aro" secondAttribute="trailing" constant="51" id="3Mi-h1-q9U"/>
+                            <constraint firstItem="kDK-ki-vuC" firstAttribute="trailing" secondItem="fOd-AJ-y4M" secondAttribute="trailing" id="3hq-dE-Lc1"/>
                             <constraint firstItem="Ngz-Hj-OS2" firstAttribute="centerY" secondItem="7l9-ut-Aro" secondAttribute="centerY" id="51b-yk-Hjy"/>
                             <constraint firstItem="lfZ-UL-imD" firstAttribute="centerX" secondItem="kDK-ki-vuC" secondAttribute="centerX" id="9RM-JO-sjh"/>
                             <constraint firstItem="kDK-ki-vuC" firstAttribute="trailing" secondItem="Yc6-E9-uSj" secondAttribute="trailing" id="Ao7-lK-XBn"/>
@@ -3191,11 +3198,13 @@ THE SOFTWARE.</string>
                             <constraint firstItem="g6K-Sb-qaJ" firstAttribute="centerX" secondItem="QUX-R9-mJA" secondAttribute="centerX" id="GkB-VA-G4t"/>
                             <constraint firstItem="7l9-ut-Aro" firstAttribute="leading" secondItem="Ngz-Hj-OS2" secondAttribute="trailing" constant="51" id="Iuf-Qq-fiB"/>
                             <constraint firstItem="Yc6-E9-uSj" firstAttribute="top" secondItem="5XN-1p-SBZ" secondAttribute="bottom" constant="9" id="Lcd-Op-83k"/>
+                            <constraint firstItem="fOd-AJ-y4M" firstAttribute="leading" secondItem="kDK-ki-vuC" secondAttribute="leading" id="Lqv-2B-dio"/>
                             <constraint firstItem="hBx-7t-vVN" firstAttribute="centerX" secondItem="kDK-ki-vuC" secondAttribute="centerX" id="LyP-Nl-SjH"/>
                             <constraint firstItem="QUX-R9-mJA" firstAttribute="top" secondItem="kDK-ki-vuC" secondAttribute="top" constant="34" id="M3U-5V-PMh"/>
                             <constraint firstItem="kDK-ki-vuC" firstAttribute="trailing" secondItem="RhU-9T-KBH" secondAttribute="trailing" id="M7l-sV-mnG"/>
                             <constraint firstItem="7l9-ut-Aro" firstAttribute="top" secondItem="RhU-9T-KBH" secondAttribute="bottom" constant="113" id="OEh-gn-nak"/>
                             <constraint firstItem="7l9-ut-Aro" firstAttribute="centerX" secondItem="kDK-ki-vuC" secondAttribute="centerX" id="ReH-HG-9qC"/>
+                            <constraint firstItem="fOd-AJ-y4M" firstAttribute="top" secondItem="kDK-ki-vuC" secondAttribute="top" id="Z9p-tw-hcf"/>
                             <constraint firstAttribute="trailing" secondItem="5XN-1p-SBZ" secondAttribute="trailing" id="Zam-fm-ThR"/>
                             <constraint firstItem="RhU-9T-KBH" firstAttribute="leading" secondItem="kDK-ki-vuC" secondAttribute="leading" id="aUb-Z3-9Fy"/>
                             <constraint firstItem="g6K-Sb-qaJ" firstAttribute="centerY" secondItem="QUX-R9-mJA" secondAttribute="centerY" id="h3C-BN-pkR"/>
@@ -3205,6 +3214,7 @@ THE SOFTWARE.</string>
                             <constraint firstItem="5XN-1p-SBZ" firstAttribute="top" secondItem="kDK-ki-vuC" secondAttribute="top" constant="55" id="suL-vY-nGT"/>
                             <constraint firstItem="QUX-R9-mJA" firstAttribute="leading" secondItem="kDK-ki-vuC" secondAttribute="leading" constant="27" id="uDX-SD-xLY"/>
                             <constraint firstItem="lfZ-UL-imD" firstAttribute="top" secondItem="RhU-9T-KBH" secondAttribute="bottom" constant="51" id="x36-bS-6lX"/>
+                            <constraint firstAttribute="bottom" secondItem="fOd-AJ-y4M" secondAttribute="bottom" id="zkJ-hb-qbw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kDK-ki-vuC"/>
                     </view>
@@ -3214,6 +3224,7 @@ THE SOFTWARE.</string>
                         <outlet property="artistLabel" destination="Yc6-E9-uSj" id="xde-pF-Kwy"/>
                         <outlet property="fullTime" destination="nxA-jw-cT5" id="7PY-gL-FY4"/>
                         <outlet property="likeBtn" destination="AXd-ZJ-h3z" id="XGb-3K-fyj"/>
+                        <outlet property="lyricsContainer" destination="fOd-AJ-y4M" id="Yah-cI-y82"/>
                         <outlet property="nowTime" destination="tyD-sO-2kB" id="d4I-JP-NZM"/>
                         <outlet property="playBtn" destination="7l9-ut-Aro" id="FCW-Re-ctc"/>
                         <outlet property="playerSlider" destination="lfZ-UL-imD" id="xtC-ah-Ebz"/>
@@ -3222,7 +3233,7 @@ THE SOFTWARE.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K7E-FO-nuZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3772" y="4599"/>
+            <point key="canvasLocation" x="3772" y="4598.9505247376319"/>
         </scene>
         <!--Playlist View Controller-->
         <scene sceneID="Fsd-Zc-DR2">
@@ -6266,6 +6277,23 @@ THE SOFTWARE.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bcT-cd-FwJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1349" y="5354"/>
+        </scene>
+        <!--Lyrics View Controller-->
+        <scene sceneID="iJb-gB-G0z">
+            <objects>
+                <viewController id="4VK-uQ-CoY" customClass="lyricsViewController" customModule="excs" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PBH-XT-qXy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <connections>
+                        <outlet property="lyricsView" destination="PBH-XT-qXy" id="jhM-te-qTq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rJm-V3-kwB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3265" y="5381"/>
         </scene>
     </scenes>
     <resources>
