@@ -3884,7 +3884,7 @@ THE SOFTWARE.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J7C-m6-HnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7102" y="1679"/>
+            <point key="canvasLocation" x="5572" y="5458"/>
         </scene>
         <!--Artist Tab Bar Controller-->
         <scene sceneID="ozM-mL-YHd">
@@ -3895,6 +3895,7 @@ THE SOFTWARE.</string>
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.63137254899999995" green="0.54901960780000003" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="INC-62-g7Z" kind="relationship" relationship="viewControllers" id="ZvV-Dl-KDd"/>
@@ -3904,7 +3905,7 @@ THE SOFTWARE.</string>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qtQ-Jg-YHM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7924" y="1348"/>
+            <point key="canvasLocation" x="7924" y="1357"/>
         </scene>
         <!--아티스트 곡 목록-->
         <scene sceneID="NG4-hu-ybC">
@@ -4025,14 +4026,36 @@ THE SOFTWARE.</string>
                     <view key="view" contentMode="scaleToFill" id="yYo-gA-8Jx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="228"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6r2-bj-bzh">
+                                <rect key="frame" x="0.0" y="49" width="375" height="179"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ngs-Lw-JZ3">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ngs-Lw-JZ3" id="GXO-1c-NWP">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="6r2-bj-bzh" secondAttribute="bottom" id="Wcl-cX-fVI"/>
+                            <constraint firstItem="6r2-bj-bzh" firstAttribute="leading" secondItem="gmW-bO-vfP" secondAttribute="leading" id="XQA-fG-zhQ"/>
+                            <constraint firstItem="6r2-bj-bzh" firstAttribute="top" secondItem="gmW-bO-vfP" secondAttribute="top" constant="49" id="YzH-qa-aU4"/>
+                            <constraint firstItem="gmW-bO-vfP" firstAttribute="trailing" secondItem="6r2-bj-bzh" secondAttribute="trailing" id="vP9-fn-GWZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gmW-bO-vfP"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="팬레터" id="NKk-44-giy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8rb-a0-JE3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7825" y="5203"/>
+            <point key="canvasLocation" x="7774" y="5203"/>
         </scene>
         <!--Music Info View-->
         <scene sceneID="P5F-P4-r0k">
@@ -4042,7 +4065,7 @@ THE SOFTWARE.</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="614"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="노래노래 댓글확인하는 페이지" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKL-1Q-VSt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="노래노래 댓글확인하는 테스트 페이지" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKL-1Q-VSt">
                                 <rect key="frame" x="0.0" y="64" width="375" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -5977,7 +6000,29 @@ THE SOFTWARE.</string>
                     <view key="view" contentMode="scaleToFill" id="ezT-oI-cal">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="228"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="C2U-hD-NPV">
+                                <rect key="frame" x="0.0" y="49" width="375" height="179"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="QaG-yD-g7P">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QaG-yD-g7P" id="aYE-JX-Sg1">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="C2U-hD-NPV" firstAttribute="leading" secondItem="83J-bc-MtM" secondAttribute="leading" id="8Q1-qD-yic"/>
+                            <constraint firstAttribute="bottom" secondItem="C2U-hD-NPV" secondAttribute="bottom" id="AYd-u4-rkD"/>
+                            <constraint firstItem="83J-bc-MtM" firstAttribute="trailing" secondItem="C2U-hD-NPV" secondAttribute="trailing" id="MHS-2J-mzK"/>
+                            <constraint firstItem="C2U-hD-NPV" firstAttribute="top" secondItem="83J-bc-MtM" secondAttribute="top" constant="49" id="sBg-D8-1hx"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="83J-bc-MtM"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="아티스트 소식" id="7wp-ZZ-Tas"/>
@@ -6127,9 +6172,8 @@ THE SOFTWARE.</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="228"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gKr-UP-5ft">
-                                <rect key="frame" x="0.0" y="50" width="375" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gKr-UP-5ft">
+                                <rect key="frame" x="0.0" y="49" width="375" height="179"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="HNy-2V-qdU">
@@ -6144,6 +6188,12 @@ THE SOFTWARE.</string>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gKr-UP-5ft" firstAttribute="leading" secondItem="1aV-qN-CBP" secondAttribute="leading" id="8n6-rm-pOo"/>
+                            <constraint firstItem="gKr-UP-5ft" firstAttribute="top" secondItem="1aV-qN-CBP" secondAttribute="top" constant="49" id="9YJ-Rw-EXF"/>
+                            <constraint firstAttribute="bottom" secondItem="gKr-UP-5ft" secondAttribute="bottom" id="jCa-6I-gn4"/>
+                            <constraint firstItem="gKr-UP-5ft" firstAttribute="trailing" secondItem="1aV-qN-CBP" secondAttribute="trailing" id="uJO-iz-uJD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1aV-qN-CBP"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="팬레터" id="TSN-nQ-YvI"/>
