@@ -32,7 +32,7 @@ class artistPageTab1: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "artistNewsCell") as! artistNewsCell
-        cell.artistNewsFrame.layer.borderWidth = 1
+        cell.artistNewsFrame.layer.borderWidth = 0.5
         cell.artistNewsFrame.layer.borderColor = UIColor.gray.cgColor
         cell.artistNewsFrame.layer.cornerRadius = 5
         
@@ -50,13 +50,21 @@ class artistPageTab1: UIViewController, UITableViewDelegate, UITableViewDataSour
             
         }
         cell.artistLabel.text = row.writerNick
-        cell.timeLabel.text = row.time
+        
+        let timeString = row.time as String
+        let splited = timeString.components(separatedBy: "-")
+        let splited2array = Array(splited[2])
+        let daytext : String = "\(splited2array[0])\(splited2array[1])"
+        let timetext : String = "\(splited2array[3])\(splited2array[4])\(splited2array[5])\(splited2array[6])\(splited2array[7])"
+        cell.timeLabel.text = splited[0] + "." + splited[1] + "." + daytext + " / " + timetext
+        cell.timeLabel.textColor = UIColor.gray
+        
         cell.contentTextView.text = row.textContent
+        cell.contentTextView.textContainer.lineFragmentPadding = 0
+        cell.contentTextView.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
         return cell
     }
-    
-    @IBOutlet weak var tableCellFrame: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         //NotificationCenter.default.removeObserver(self, name: NSNotification.Name("loadArtistNews"), object: nil)
