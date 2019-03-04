@@ -12,6 +12,7 @@ import SwiftyJSON
 
 class lyricsViewController: UIViewController {
 
+    @IBOutlet weak var warningTextView: UITextView!
     @IBOutlet var lyricsView: UIView!
     @IBOutlet weak var lyricsTextView: UITextView!
     
@@ -22,6 +23,7 @@ class lyricsViewController: UIViewController {
         self.lyricsView.addGestureRecognizer(gesture)
         NotificationCenter.default.addObserver(self, selector: #selector(lyricsBtnPush), name: NSNotification.Name("lyricsOn"), object: nil)
         self.lyricsTextView.alpha = 0.8
+        self.warningTextView.isHidden = true
     }
     
     @objc func someAction(_ sender:UITapGestureRecognizer){

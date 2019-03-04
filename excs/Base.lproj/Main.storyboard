@@ -6287,27 +6287,40 @@ THE SOFTWARE.</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fz1-kg-mE2">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fz1-kg-mE2">
                                 <rect key="frame" x="60" y="160" width="255" height="327"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="가사가 출력되는 Container View 입니다. 삭제하지 마세요." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SZB-ab-NFX">
+                                <rect key="frame" x="13.5" y="240.5" width="348" height="166"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="166" id="AOh-h1-zrP"/>
+                                    <constraint firstAttribute="width" constant="348" id="mZ5-Sn-OiL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Fz1-kg-mE2" firstAttribute="leading" secondItem="PBH-XT-qXy" secondAttribute="leading" constant="60" id="2iZ-2n-exG"/>
+                            <constraint firstItem="SZB-ab-NFX" firstAttribute="centerY" secondItem="PBH-XT-qXy" secondAttribute="centerY" id="9dw-UK-Xmz"/>
                             <constraint firstAttribute="bottom" secondItem="Fz1-kg-mE2" secondAttribute="bottom" constant="160" id="9jn-wr-nOp"/>
                             <constraint firstItem="Fz1-kg-mE2" firstAttribute="top" secondItem="PBH-XT-qXy" secondAttribute="top" constant="160" id="EMn-Pk-pUi"/>
+                            <constraint firstItem="SZB-ab-NFX" firstAttribute="centerX" secondItem="PBH-XT-qXy" secondAttribute="centerX" id="RZe-I6-jMB"/>
                             <constraint firstAttribute="trailing" secondItem="Fz1-kg-mE2" secondAttribute="trailing" constant="60" id="iWR-j6-JDy"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="lyricsTextView" destination="Fz1-kg-mE2" id="bbb-a2-mSE"/>
                         <outlet property="lyricsView" destination="PBH-XT-qXy" id="jhM-te-qTq"/>
+                        <outlet property="warningTextView" destination="SZB-ab-NFX" id="GwT-Kx-OfM"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="3264.8000000000002" y="5380.6596701649178"/>
+            <point key="canvasLocation" x="3772" y="5454.4227886056979"/>
         </scene>
     </scenes>
     <resources>
