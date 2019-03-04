@@ -21,6 +21,7 @@ class lyricsViewController: UIViewController {
         let gesture = UITapGestureRecognizer(target: self, action:  #selector (self.someAction (_:)))
         self.lyricsView.addGestureRecognizer(gesture)
         NotificationCenter.default.addObserver(self, selector: #selector(lyricsBtnPush), name: NSNotification.Name("lyricsOn"), object: nil)
+        self.lyricsTextView.alpha = 0.8
     }
     
     @objc func someAction(_ sender:UITapGestureRecognizer){
@@ -38,8 +39,13 @@ class lyricsViewController: UIViewController {
             if let json = response.result.value{
                 let temp : NSArray = json as! NSArray
                 print(temp)
-                self.lyricsTextView.text = ((temp[0] as AnyObject).value(forKey: "lyrics") as? String)!
-                
+                if(((temp[0] as AnyObject).value(forKey: "lyrics") as? String) == nil){
+                    self.lyricsTextView.text = "등록된 가사가 없습니다."
+                }
+                else{
+                    self.lyricsTextView.text = ((temp[0] as AnyObject).value(forKey: "lyrics") as? String)!
+                    print("lyrics exist")
+                }
             }
         }
     }
