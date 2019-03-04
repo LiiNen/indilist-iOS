@@ -50,6 +50,12 @@ class artistPageTab1: UIViewController, UITableViewDelegate, UITableViewDataSour
             
         }
         cell.artistLabel.text = row.writerNick
+        if(UserDefaults.standard.string(forKey: "loginName")! == row.writerNick){
+            cell.deleteBtn.isHidden = false
+        }
+        else{
+            cell.deleteBtn.isHidden = true
+        }
         
         let timeString = row.time as String
         let splited = timeString.components(separatedBy: "-")
