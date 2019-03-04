@@ -117,6 +117,11 @@ class sideMenu: UITableViewController {
         if(artistBool == "1"){
             NotificationCenter.default.post(name: NSNotification.Name("ShowArtistPageMenu" + sNum!), object: nil)
             print(">><><><>[][][][][]", sNum!)
+            
+            let artId = UserDefaults.standard.string(forKey: "loginArtistNum")!
+            let artIdInt = Int(artId)!
+            UserDefaults.standard.setValue(artIdInt, forKey: "artistNewsId")
+            UserDefaults.standard.synchronize()
         }
         else{
             NotificationCenter.default.post(name: NSNotification.Name("ShowArtistRegiMenu" + sNum!), object: nil)

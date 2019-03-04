@@ -34,6 +34,7 @@ class artistRankingView: UIViewController, UITableViewDelegate, UITableViewDataS
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let myview: artistPageView = storyboard.instantiateViewController(withIdentifier: "artistInfoS") as! artistPageView
         myview.artistIdForInfo = self.recItemList[indexPath.row].num
+        UserDefaults.standard.set(self.recItemList[indexPath.row].num, forKey: "artistNewsId")
         myview.albumStringFrom = self.recItemList[indexPath.row].photourl
         self.present(myview, animated: true, completion: nil)
     }

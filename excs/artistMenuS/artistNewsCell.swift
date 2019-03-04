@@ -10,7 +10,17 @@ import UIKit
 
 class artistNewsCell: UITableViewCell {
 
+    var info : [String : Any]!
+    
     @IBOutlet weak var artistNewsFrame: UIView!
+    @IBOutlet weak var contentTextView: UITextView!
+    @IBOutlet weak var artistImageView: UIImageView!
+    @IBOutlet weak var newsImageView: UIImageView!
+    @IBOutlet weak var artistLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var deleteBtn: UIButton!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -2655,7 +2655,7 @@ THE SOFTWARE.</string>
             <objects>
                 <viewController id="4Kk-Uz-lh9" customClass="sideMenu201_PW" customModule="excs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5hb-BA-RcJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="614"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ndM-4B-b6a">
@@ -2747,7 +2747,7 @@ THE SOFTWARE.</string>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xU-AW-5La">
-                                <rect key="frame" x="89" y="381.5" width="197.5" height="29.5"/>
+                                <rect key="frame" x="89" y="434.5" width="197.5" height="29.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="197.5" id="qY6-Cf-KWx"/>
                                     <constraint firstAttribute="height" constant="29.5" id="zJu-rr-1UM"/>
@@ -5998,7 +5998,43 @@ THE SOFTWARE.</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Png-Ud-HfK">
-                                                    <rect key="frame" x="26" y="10" width="323" height="129.5"/>
+                                                    <rect key="frame" x="26" y="10" width="323" height="130"/>
+                                                    <subviews>
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="content 미리보기" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="U7m-ZC-DmT">
+                                                            <rect key="frame" x="109" y="32" width="196" height="96"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        </textView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Ms-g2-Of1">
+                                                            <rect key="frame" x="27" y="8" width="33.5" height="33.5"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="아티스트명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJO-Ga-Ja4">
+                                                            <rect key="frame" x="109" y="0.0" width="74" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="업로드 시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Gm-iE-qAZ">
+                                                            <rect key="frame" x="109" y="19" width="78" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSh-jV-x39">
+                                                            <rect key="frame" x="277" y="0.0" width="46" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal" title="Button"/>
+                                                        </button>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="caU-fG-7uE">
+                                                            <rect key="frame" x="18" y="65" width="50" height="50"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                    </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                             </subviews>
@@ -6010,7 +6046,13 @@ THE SOFTWARE.</string>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="artistImageView" destination="1Ms-g2-Of1" id="HdP-zN-bX7"/>
+                                            <outlet property="artistLabel" destination="xJO-Ga-Ja4" id="Iwm-yf-Pqx"/>
                                             <outlet property="artistNewsFrame" destination="Png-Ud-HfK" id="ala-mB-aVv"/>
+                                            <outlet property="contentTextView" destination="U7m-ZC-DmT" id="YoN-CL-woL"/>
+                                            <outlet property="deleteBtn" destination="TSh-jV-x39" id="gq2-Sd-JEp"/>
+                                            <outlet property="newsImageView" destination="caU-fG-7uE" id="63U-ab-Sa3"/>
+                                            <outlet property="timeLabel" destination="0Gm-iE-qAZ" id="dtB-Rx-72J"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -6030,10 +6072,13 @@ THE SOFTWARE.</string>
                         <viewLayoutGuide key="safeArea" id="83J-bc-MtM"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="아티스트 소식" id="7wp-ZZ-Tas"/>
+                    <connections>
+                        <outlet property="newsTableView" destination="C2U-hD-NPV" id="Ask-EN-2Ip"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Fn-or-oop" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5572" y="5203"/>
+            <point key="canvasLocation" x="5572" y="5202.9985007496252"/>
         </scene>
         <!--Artist Tab Bar Controller-->
         <scene sceneID="Rzb-gl-OR7">
@@ -6418,7 +6463,7 @@ THE SOFTWARE.</string>
     <inferredMetricsTieBreakers>
         <segue reference="haU-rO-17j"/>
         <segue reference="VKa-Xb-eRA"/>
-        <segue reference="4HY-y4-odK"/>
+        <segue reference="SGt-U2-fx7"/>
         <segue reference="Dn3-lJ-4FW"/>
         <segue reference="IkX-3u-ngY"/>
         <segue reference="f6Y-T2-Qhk"/>

@@ -244,6 +244,9 @@ class artistPageView: UIViewController {
                     self.musicnum.text = String(swiftyJsonVar[0]["num_song"].int!) + "곡"
                     self.likenum.text = String(swiftyJsonVar[0]["artist_like"].int!)
                     
+//                    UserDefaults.standard.setValue(swiftyJsonVar[0]["artist_num"].int!, forKey: "artistNewsId")
+//                    UserDefaults.standard.synchronize()
+                    
                     let intte : Int? = Int(num)
                     para["num"] = intte
                     Alamofire.request("https://www.indi-list.com/PersonalArtistRank", method: .post, parameters: para, encoding: JSONEncoding.default, headers: ["Content-type" : "application/json"]).responseString { response in
