@@ -71,7 +71,6 @@ class artistPageTab2: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         if UserDefaults.standard.string(forKey: "notME") != nil{
-            
             musicListLoadId(completion: {
                 self.musicTable.reloadData()
             })

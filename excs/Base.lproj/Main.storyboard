@@ -3870,22 +3870,6 @@ THE SOFTWARE.</string>
             </objects>
             <point key="canvasLocation" x="5572" y="4598.9505247376319"/>
         </scene>
-        <!--아티스트 소식-->
-        <scene sceneID="gkH-9V-7YU">
-            <objects>
-                <viewController id="INC-62-g7Z" customClass="artistPageTab1" customModule="excs" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="yND-b9-OWU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="228"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="spC-My-bFI"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="아티스트 소식" id="Cz4-jN-nks"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="J7C-m6-HnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5572" y="5458"/>
-        </scene>
         <!--Artist Tab Bar Controller-->
         <scene sceneID="ozM-mL-YHd">
             <objects>
@@ -3898,14 +3882,14 @@ THE SOFTWARE.</string>
                         <color key="selectedImageTintColor" red="0.63137254899999995" green="0.54901960780000003" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
-                        <segue destination="INC-62-g7Z" kind="relationship" relationship="viewControllers" id="ZvV-Dl-KDd"/>
-                        <segue destination="Trr-eo-CBl" kind="relationship" relationship="viewControllers" id="VGE-zg-K4p"/>
-                        <segue destination="vmO-Kz-6f1" kind="relationship" relationship="viewControllers" id="gzI-mh-egL"/>
+                        <segue destination="U8x-Z1-WZJ" kind="relationship" relationship="viewControllers" id="haU-rO-17j"/>
+                        <segue destination="Trr-eo-CBl" kind="relationship" relationship="viewControllers" id="EIS-UE-bb3"/>
+                        <segue destination="vmO-Kz-6f1" kind="relationship" relationship="viewControllers" id="fPZ-YY-Ddk"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qtQ-Jg-YHM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7924" y="1357"/>
+            <point key="canvasLocation" x="7484" y="4490"/>
         </scene>
         <!--아티스트 곡 목록-->
         <scene sceneID="NG4-hu-ybC">
@@ -4017,7 +4001,7 @@ THE SOFTWARE.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ep8-A1-gLh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7924" y="1679"/>
+            <point key="canvasLocation" x="8393" y="4363"/>
         </scene>
         <!--팬레터-->
         <scene sceneID="6t5-hc-BUy">
@@ -4055,7 +4039,7 @@ THE SOFTWARE.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8rb-a0-JE3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7774" y="5203"/>
+            <point key="canvasLocation" x="8393" y="5091"/>
         </scene>
         <!--Music Info View-->
         <scene sceneID="P5F-P4-r0k">
@@ -6001,19 +5985,41 @@ THE SOFTWARE.</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="228"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="C2U-hD-NPV">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="C2U-hD-NPV">
                                 <rect key="frame" x="0.0" y="49" width="375" height="179"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="QaG-yD-g7P">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="artistNewsCell" id="QaG-yD-g7P">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QaG-yD-g7P" id="aYE-JX-Sg1">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Png-Ud-HfK">
+                                                    <rect key="frame" x="26" y="10" width="323" height="129.5"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="artistPage" translatesAutoresizingMaskIntoConstraints="NO" id="Csw-iE-kog">
+                                                            <rect key="frame" x="41" y="-7" width="240" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Png-Ud-HfK" secondAttribute="bottom" constant="10" id="6He-2y-yxL"/>
+                                                <constraint firstItem="Png-Ud-HfK" firstAttribute="top" secondItem="aYE-JX-Sg1" secondAttribute="top" constant="10" id="JUN-4x-YJv"/>
+                                                <constraint firstItem="Png-Ud-HfK" firstAttribute="leading" secondItem="aYE-JX-Sg1" secondAttribute="leading" constant="26" id="pNy-yS-Wf4"/>
+                                                <constraint firstAttribute="trailing" secondItem="Png-Ud-HfK" secondAttribute="trailing" constant="26" id="uSR-cu-yhv"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="U8x-Z1-WZJ" id="24e-Q0-LbP"/>
+                                    <outlet property="delegate" destination="U8x-Z1-WZJ" id="KZs-rI-9pO"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -6412,7 +6418,8 @@ THE SOFTWARE.</string>
         <image name="starimage" width="40" height="38"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="K08-YY-JQt"/>
+        <segue reference="haU-rO-17j"/>
+        <segue reference="VKa-Xb-eRA"/>
         <segue reference="4HY-y4-odK"/>
         <segue reference="maz-Um-ybS"/>
         <segue reference="djA-sH-3OF"/>

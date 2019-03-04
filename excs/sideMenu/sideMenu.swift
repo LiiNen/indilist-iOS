@@ -113,6 +113,7 @@ class sideMenu: UITableViewController {
         let sNum = UserDefaults.standard.string(forKey: "mainState")
         print(artistBool, "<<<<<<<<<<<<<<<<<<<<<<")
         print(">><><><>[][][][][]", sNum!)
+        UserDefaults.standard.removeObject(forKey: "notME")
         if(artistBool == "1"){
             NotificationCenter.default.post(name: NSNotification.Name("ShowArtistPageMenu" + sNum!), object: nil)
             print(">><><><>[][][][][]", sNum!)

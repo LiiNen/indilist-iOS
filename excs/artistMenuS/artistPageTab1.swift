@@ -11,7 +11,18 @@ import SwiftyJSON
 import Alamofire
 import AlamofireImage
 
-class artistPageTab1: UIViewController {
+class artistPageTab1: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 8
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "artistNewsCell") as! UITableViewCell
+        return cell
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
