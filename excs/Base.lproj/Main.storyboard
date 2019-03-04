@@ -208,7 +208,7 @@
             <objects>
                 <viewController id="KMG-uW-BnP" customClass="sideMenu201" customModule="excs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fdP-Us-xRW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="614"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultUserImage" translatesAutoresizingMaskIntoConstraints="NO" id="lA2-Ok-HOM">
@@ -373,7 +373,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVb-fq-w74">
-                                <rect key="frame" x="9" y="464" width="357" height="38"/>
+                                <rect key="frame" x="9" y="517" width="357" height="38"/>
                                 <color key="backgroundColor" red="0.61568627450980395" green="0.55294117647058827" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="357" id="hB7-8l-AEK"/>
@@ -387,7 +387,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oms-0N-KoR">
-                                <rect key="frame" x="9" y="554" width="357" height="38"/>
+                                <rect key="frame" x="9" y="607" width="357" height="38"/>
                                 <color key="backgroundColor" red="0.61568627450980395" green="0.55294117647058827" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="54N-1P-maK"/>
@@ -401,7 +401,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGT-Lx-enV">
-                                <rect key="frame" x="9" y="509" width="357" height="38"/>
+                                <rect key="frame" x="9" y="562" width="357" height="38"/>
                                 <color key="backgroundColor" red="0.61568627450980395" green="0.55294117647058827" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="Zmn-Uz-Gff"/>
@@ -1142,11 +1142,11 @@ THE SOFTWARE.</string>
             <objects>
                 <viewController id="6vz-Xa-fF2" customClass="loginView" customModule="excs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hcc-jl-zO6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="614"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HqP-mG-yEx">
-                                <rect key="frame" x="233.5" y="350" width="36.5" height="10.5"/>
+                                <rect key="frame" x="233.5" y="403" width="36.5" height="10.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10.5" id="4Sx-Ot-pGq"/>
                                     <constraint firstAttribute="width" constant="36.5" id="din-fe-ubA"/>
@@ -1160,7 +1160,7 @@ THE SOFTWARE.</string>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="   ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UQv-zU-0Rh">
-                                <rect key="frame" x="31.5" y="206.5" width="312" height="38.5"/>
+                                <rect key="frame" x="31.5" y="259.5" width="312" height="38.5"/>
                                 <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38.5" id="ioK-Su-oAT"/>
@@ -1170,7 +1170,7 @@ THE SOFTWARE.</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="   PASSWORD" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Cs-0k-EDe">
-                                <rect key="frame" x="31.5" y="251.5" width="312" height="38.5"/>
+                                <rect key="frame" x="31.5" y="304.5" width="312" height="38.5"/>
                                 <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38.5" id="Iad-Ip-dYr"/>
@@ -1180,7 +1180,7 @@ THE SOFTWARE.</string>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R52-s7-8cl">
-                                <rect key="frame" x="31.5" y="300.5" width="312.5" height="38.5"/>
+                                <rect key="frame" x="31.5" y="353.5" width="312.5" height="38.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38.5" id="krc-oQ-NQR"/>
                                 </constraints>
@@ -1191,7 +1191,7 @@ THE SOFTWARE.</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GhQ-hP-1HL">
-                                <rect key="frame" x="95" y="350" width="47" height="10.5"/>
+                                <rect key="frame" x="95" y="403" width="47" height="10.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10.5" id="xuc-XO-o2c"/>
                                 </constraints>
@@ -1204,7 +1204,7 @@ THE SOFTWARE.</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Whz-Ae-zvD">
-                                <rect key="frame" x="159" y="350" width="57.5" height="10.5"/>
+                                <rect key="frame" x="159" y="403" width="57.5" height="10.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="57.5" id="IUH-ZK-ukQ"/>
                                     <constraint firstAttribute="height" constant="10.5" id="TDj-XQ-I0z"/>
@@ -1265,7 +1265,7 @@ THE SOFTWARE.</string>
             <objects>
                 <viewController id="Ecm-ma-xfg" customClass="findView" customModule="excs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yL7-vw-BQN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="614"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아이디 찾기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLu-da-c1M">
@@ -1287,7 +1287,7 @@ THE SOFTWARE.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 찾기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EqH-bU-CVN">
-                                <rect key="frame" x="149.5" y="279" width="76.5" height="14"/>
+                                <rect key="frame" x="149.5" y="332" width="76.5" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="gdu-vg-fkU"/>
                                 </constraints>
@@ -1305,7 +1305,7 @@ THE SOFTWARE.</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아이디를 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iWt-JU-scw">
-                                <rect key="frame" x="15.5" y="314" width="344" height="37"/>
+                                <rect key="frame" x="15.5" y="367" width="344" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="K3M-fm-xG6"/>
                                 </constraints>
@@ -1314,7 +1314,7 @@ THE SOFTWARE.</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email을 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zVj-b4-IPR">
-                                <rect key="frame" x="15.5" y="362" width="344" height="37"/>
+                                <rect key="frame" x="15.5" y="415" width="344" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="4f6-A6-vei"/>
                                 </constraints>
@@ -1338,7 +1338,7 @@ THE SOFTWARE.</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="id5-bW-kzl">
-                                <rect key="frame" x="126.5" y="433.5" width="122" height="29.5"/>
+                                <rect key="frame" x="126.5" y="486.5" width="122" height="29.5"/>
                                 <color key="backgroundColor" red="0.61568627450980395" green="0.55294117647058827" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="122" id="0bO-pa-Rqi"/>
@@ -1353,7 +1353,7 @@ THE SOFTWARE.</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*이메일로 임시 비밀번호가 발송됩니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLS-dy-c2z">
-                                <rect key="frame" x="106" y="408" width="163" height="11"/>
+                                <rect key="frame" x="106" y="461" width="163" height="11"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="11" id="QiV-5c-sNu"/>
                                 </constraints>
@@ -2153,7 +2153,7 @@ THE SOFTWARE.</string>
             <objects>
                 <viewController id="Rkb-FK-UIr" customClass="artistRegisterView" customModule="excs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DUo-mi-kC0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="614"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohb-lI-ljA">
@@ -2292,13 +2292,13 @@ THE SOFTWARE.</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qUD-U2-FuH">
-                                <rect key="frame" x="20" y="84" width="335" height="500"/>
+                                <rect key="frame" x="20" y="40" width="335" height="597"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c00-c4-ShH">
-                                        <rect key="frame" x="0.0" y="40" width="335" height="460"/>
+                                        <rect key="frame" x="0.0" y="40" width="335" height="557"/>
                                     </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbq-fX-qYk">
-                                        <rect key="frame" x="132.5" y="430" width="70" height="40"/>
+                                        <rect key="frame" x="132.5" y="527" width="70" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="pHV-UG-aw9"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="yiS-0H-COf"/>
@@ -2655,7 +2655,7 @@ THE SOFTWARE.</string>
             <objects>
                 <viewController id="4Kk-Uz-lh9" customClass="sideMenu201_PW" customModule="excs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5hb-BA-RcJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="614"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ndM-4B-b6a">
@@ -2747,7 +2747,7 @@ THE SOFTWARE.</string>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xU-AW-5La">
-                                <rect key="frame" x="89" y="381.5" width="197.5" height="29.5"/>
+                                <rect key="frame" x="89" y="434.5" width="197.5" height="29.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="197.5" id="qY6-Cf-KWx"/>
                                     <constraint firstAttribute="height" constant="29.5" id="zJu-rr-1UM"/>
@@ -3649,6 +3649,14 @@ THE SOFTWARE.</string>
                                                 </constraints>
                                                 <connections>
                                                     <action selector="likeBtn:" destination="UEI-Zy-baK" eventType="touchUpInside" id="pph-5m-7sD"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4sI-Nw-GeW">
+                                                <rect key="frame" x="164" y="8" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="infogogobtn:" destination="UEI-Zy-baK" eventType="touchUpInside" id="exE-X2-Jvs"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -6503,7 +6511,7 @@ THE SOFTWARE.</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="haU-rO-17j"/>
-        <segue reference="VKa-Xb-eRA"/>
+        <segue reference="K08-YY-JQt"/>
         <segue reference="SGt-U2-fx7"/>
         <segue reference="Dn3-lJ-4FW"/>
         <segue reference="IkX-3u-ngY"/>

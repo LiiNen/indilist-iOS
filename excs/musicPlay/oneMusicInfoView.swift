@@ -319,6 +319,35 @@ class oneMusicInfoView: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     @IBOutlet weak var commentBtn: UIButton!
     
+    @IBAction func infogogobtn(_ sender: Any) {
+        gotoArtistMenu(completion: {
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let myview: artistPageView = storyboard.instantiateViewController(withIdentifier: "artistInfoS") as! artistPageView
+            myview.artistIdForInfo = UserDefaults.standard.integer(forKey: "infoseekid")
+            myview.albumStringFrom = self.info["artistIMG"] as! String
+            self.present(myview, animated: true, completion: nil)
+        })
+    }
+    func gotoArtistMenu(completion : @escaping() -> ()){
+        
+        Alamofire.request("https://indi-list.com/GetArtistInfobyNick", method: .post, parameters: ["nick" : info["artist"] as! String] as Parameters, encoding: JSONEncoding.default, headers: ["Content-type" : "application/json"]).responseJSON { response in
+            print(response, "the results")
+            if((response.result.value) != nil) {
+                var swiftyJsonVar = JSON(response.result.value!)
+                UserDefaults.standard.setValue("true", forKey: "notME")
+                UserDefaults.standard.setValue(swiftyJsonVar[0]["artist_num"].int!, forKey: "infoseekid")
+                UserDefaults.standard.setValue(swiftyJsonVar[0]["artist_num"].int!, forKey: "artistNewsId")
+                UserDefaults.standard.synchronize()
+                print(swiftyJsonVar[0]["artist_num"], "is the real number")
+            }
+            completion()
+        }
+    }
+    
+    
+    
+    
+    
     func loginAlert(alertMessage : String){
         let myAlert = UIAlertController(title: "경고", message: alertMessage, preferredStyle: UIAlertController.Style.alert);
         
