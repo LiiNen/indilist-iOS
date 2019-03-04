@@ -19,11 +19,17 @@ class artistPageTab1: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "artistNewsCell") as! UITableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "artistNewsCell") as! artistNewsCell
+        cell.artistNewsFrame.layer.borderWidth = 1
+        cell.artistNewsFrame.layer.borderColor = UIColor.gray.cgColor
+        cell.artistNewsFrame.layer.cornerRadius = 5
+        
         return cell
     }
     
-
+    
+    
+    @IBOutlet weak var tableCellFrame: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         //NotificationCenter.default.removeObserver(self, name: NSNotification.Name("loadArtistNews"), object: nil)
