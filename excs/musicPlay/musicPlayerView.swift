@@ -249,55 +249,14 @@ class musicPlayerView: UIViewController {
     }
     
     @IBAction func albumArtBtn(_ sender: Any) {
-        lyricsBtnPush()
+        NotificationCenter.default.post(name: NSNotification.Name("lyricsOn"), object: nil)
+        lyricsContainer.isHidden = false
     }
-    
-    
     
     
     @IBOutlet weak var lyricsContainer: UIView!
     @objc func lyricsOff(){
         lyricsContainer.isHidden = true
-    }
-    
-    
-    
-    
-    func lyricsBtnPush(){
-        let tempStringnowp = self.nowp["music-id"] as! String
-        print(tempStringnowp)
-        
-        Alamofire.request("https://indi-list.com/api/GetLyrics", method: .post, parameters: ["mid" : tempStringnowp], encoding: JSONEncoding.default, headers : ["x-access-token" : UserDefaults.standard.string(forKey: "loginToken")!]).responseJSON { response in
-            
-            let swiftyJsonVar : JSON
-            
-            if((response.result.value) != nil) {
-                swiftyJsonVar = JSON(response.result.value!)
-                print("origin : ", swiftyJsonVar)
-                if(swiftyJsonVar["err"].exists()){
-                    if(swiftyJsonVar["result"].string! == "update"){
-                        print(swiftyJsonVar["token"].string!)
-                        print("토큰이 교체됩니다. 이하의 토큰으로 진행해주세요.")
-                        let tok = swiftyJsonVar["token"].string!
-                        UserDefaults.standard.setValue(tok, forKey: "loginToken")
-                        UserDefaults.standard.synchronize()
-                        self.lyricsBtnPush()
-                    }
-                    else{
-                        self.showToast(message: "다시 로그인해주세요")
-                        self.removeOb()
-                        NotificationCenter.default.post(name: NSNotification.Name("logOutAction"), object: nil)
-                        
-                        return;
-                    }
-                }
-                else{
-                    print(swiftyJsonVar)
-                    print("spspspspsps")
-                    self.lyricsContainer.isHidden = false
-                }
-            }
-        }
     }
     
     func showToast(message : String) {
